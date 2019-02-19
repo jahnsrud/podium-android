@@ -14,11 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     fun openPlaybackActivity(view: View) {
         val intent = Intent(this, PlaybackActivity::class.java)
-
-        // Håvard var her:
-        intent.putExtra("String", "Zitring")
-
         startActivity(intent)
     }
+
 
 }
