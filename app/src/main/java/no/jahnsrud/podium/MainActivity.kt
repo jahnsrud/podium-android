@@ -4,6 +4,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import io.realm.Realm
+import no.jahnsrud.podium.Models.Podcast
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +17,19 @@ class MainActivity : AppCompatActivity() {
     fun openPlaybackActivity(view: View) {
         val intent = Intent(this, PlaybackActivity::class.java)
         startActivity(intent)
+    }
+
+    fun testAddPod(view: View) {
+
+        val podcast: Podcast = Podcast()
+        podcast.title = "Test Podcast"
+        podcast.id = "test01"
+
+        val manager:PodcastManager = PodcastManager()
+        manager.addPodcast(podcast)
+
+
+
     }
 
 
