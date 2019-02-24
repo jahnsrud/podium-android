@@ -2,7 +2,6 @@ package no.jahnsrud.podium
 
 import android.util.Log
 import io.realm.Realm
-import io.realm.kotlin.createObject
 import no.jahnsrud.podium.Models.Podcast
 import java.io.IOException
 
