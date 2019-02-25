@@ -5,7 +5,7 @@ import java.lang.Exception
 
 open class AudioPlayer() {
 
-    private lateinit var mediaPlayer: MediaPlayer
+    private var mediaPlayer: MediaPlayer
 
     init {
         mediaPlayer = MediaPlayer()
@@ -13,10 +13,9 @@ open class AudioPlayer() {
 
     }
 
-    fun playPause() {
-
+    fun playFromUrl(url:String) {
         try {
-            mediaPlayer.setDataSource("https://sample-videos.com/audio/mp3/crowd-cheering.mp3")
+            mediaPlayer.setDataSource(url)
             mediaPlayer.prepareAsync()
 
             mediaPlayer.setOnPreparedListener {
@@ -25,6 +24,17 @@ open class AudioPlayer() {
         } catch (e: Exception) {
             println(e)
         }
+    }
+
+    fun playPause() {
+
+        if (mediaPlayer.isPlaying) {
+
+            mediaPlayer.pause()
+        } else {
+            mediaPlayer.start()
+        }
+
     }
 
 }
