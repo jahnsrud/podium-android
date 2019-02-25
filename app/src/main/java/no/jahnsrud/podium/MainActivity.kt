@@ -19,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun openPodcast(view: View) {
+        val intent = Intent(this, PodcastActivity::class.java)
+        startActivity(intent)
+    }
+
     fun testAddPod(view: View) {
 
         val podcast: Podcast = Podcast()
