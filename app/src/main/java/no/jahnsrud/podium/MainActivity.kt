@@ -20,15 +20,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openPodcast(view: View) {
+
+        val mockPod:Podcast = Podcast()
+        mockPod.title = "MockPod™"
+        mockPod.id = "hey01"
+
         val intent = Intent(this, PodcastActivity::class.java)
+        // intent.putExtra("podcast", mockPod)
         startActivity(intent)
     }
 
     fun testAddPod(view: View) {
 
         val podcast: Podcast = Podcast()
-        podcast.title = "Test Podcast"
-        podcast.id = "test01"
+        podcast.title = "Tes1t Podcast"
+        podcast.id = "test02"
 
         val manager:PodcastManager = PodcastManager()
         manager.addPodcast(podcast)

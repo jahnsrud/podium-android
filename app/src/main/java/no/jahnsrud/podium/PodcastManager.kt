@@ -2,6 +2,9 @@ package no.jahnsrud.podium
 
 import android.util.Log
 import io.realm.Realm
+import io.realm.RealmResults
+import io.realm.kotlin.createObject
+import io.realm.kotlin.where
 import no.jahnsrud.podium.Models.Podcast
 import java.io.IOException
 
@@ -12,29 +15,34 @@ open class PodcastManager() {
         print(podcast.title)
 
         val realm = Realm.getDefaultInstance()
-        realm.beginTransaction()
 
         try {
-            realm.createObject(podcast::class.java, podcast.id)
+            val podcast = realm.createObject<Podcast>(podcast.id)
         } catch (e:IOException) {
-            realm.cancelTransaction()
             Log.e("Something went wrong", "Cancelling transaction...")
+        } finally {
         }
 
-        realm.close()
 
         betaPrintAllPodcasts()
 
     }
 
+    fun getAllPodcasts() : RealmResults<Podcast> {
+        val realm = Realm.getDefaultInstance()
+        val podcasts = realm.where<Podcast>().findAll()
+
+        return podcasts
+
+    }
+
     fun betaPrintAllPodcasts() {
 
-        val realm = Realm.getDefaultInstance()
+        println("🚂 All aboard the print train")
 
-        val podcast = realm.where(Podcast::class.java).findFirst()
-        if (podcast != null) {
-            println("Fant en i databasen: ${podcast.title} & ID: ${podcast.id}")
-        }
+       print(getAllPodcasts().forEach {
+            println(it.id)
+       })
 
     }
 

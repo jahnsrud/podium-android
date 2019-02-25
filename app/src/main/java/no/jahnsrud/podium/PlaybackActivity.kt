@@ -10,8 +10,7 @@ import java.lang.Exception
 
 class PlaybackActivity : AppCompatActivity() {
 
-    private lateinit var mediaPlayer: MediaPlayer
-
+    val audioPlayer = AudioPlayer()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,21 +18,7 @@ class PlaybackActivity : AppCompatActivity() {
     }
 
     fun playPause(view: View) {
-
-
-        mediaPlayer = MediaPlayer()
-        // mediaPlayer.setAudioAttributes(AudioAttributes.CONTENT_TYPE_MUSIC)
-
-        try {
-            mediaPlayer.setDataSource("https://sample-videos.com/audio/mp3/crowd-cheering.mp3")
-            mediaPlayer.prepareAsync()
-
-            mediaPlayer.setOnPreparedListener {
-                mediaPlayer.start()
-            }
-        } catch (e:Exception) {
-            println(e)
-        }
+        audioPlayer.playPause()
 
 
     }
