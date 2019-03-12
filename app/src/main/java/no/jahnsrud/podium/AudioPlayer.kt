@@ -3,7 +3,7 @@ package no.jahnsrud.podium
 import android.media.MediaPlayer
 import java.lang.Exception
 
-open class AudioPlayer() {
+object AudioPlayer {
 
     private var mediaPlayer: MediaPlayer
 

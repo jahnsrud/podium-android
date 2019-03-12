@@ -13,7 +13,7 @@ import java.lang.Exception
 
 class PlaybackActivity : AppCompatActivity() {
 
-    val audioPlayer = AudioPlayer()
+    val audioPlayer = AudioPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import io.realm.Realm
 import no.jahnsrud.podium.Models.Podcast
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +21,11 @@ class MainActivity : AppCompatActivity() {
     fun openPodcast(view: View) {
 
         val mockPod:Podcast = Podcast()
-        mockPod.title = "MockPod™"
-        mockPod.id = "hey01"
+
+        with(mockPod) {
+            title = "MockPod"
+            id = "hey02"
+        }
 
         val intent = Intent(this, PodcastActivity::class.java)
         // intent.putExtra("podcast", mockPod)

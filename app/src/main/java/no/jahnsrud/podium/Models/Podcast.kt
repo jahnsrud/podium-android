@@ -1,15 +1,15 @@
 package no.jahnsrud.podium.Models
 
-import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
+import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 
-open class Podcast : RealmObject() {
+@Entity(tableName = "podcasts")
+class Podcast(
+    @PrimaryKey var id:String,
+    @ColumnInfo(name = "title") var name:String,
+    @ColumnInfo(name = "feedUrl") var feedUrl:String,
+    @ColumnInfo(name = "coverImageUrl") var coverImageUrl:String
 
-    @PrimaryKey
-    var id:String? = null
-    var title:String? = null
-    var feedUrl:String? = null
-    var coverImageUrl:String? = null
 
-
-}
+)
