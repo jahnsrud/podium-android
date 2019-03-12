@@ -1,53 +1,39 @@
 package no.jahnsrud.podium.Database
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import no.jahnsrud.podium.Models.Podcast
 import no.jahnsrud.podium.R
 
-class PodcastAdapter(var podcasts: ArrayList<Podcast>) : RecyclerView.Adapter<PodcastAdapter.PodcastHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): PodcastHolder {
+class PodcastAdapter internal constructor(
+    context: Context
+) : RecyclerView.Adapter<PodcastAdapter.WordViewHolder>() {
 
-       return PodcastHolder(
-           LayoutInflater.from(parent.context).inflate(
-               R.layout.fragment_podcast_list,
-               parent,
-               false
-           )
-       )
+    private val inflater: LayoutInflater = LayoutInflater.from(context)
+    private var podcasts = emptyList<Podcast>() // Cached copy of words
+
+    inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val wordItemView: TextView = itemView.findViewById(R.id.list_title)
     }
 
-    override fun getItemCount(): Int {
-        return podcasts.count()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
+        val itemView = inflater.inflate(R.layout.podcast_list_item, parent, false)
+        return WordViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: PodcastHolder, index: Int) {
-       val podcastItem:Podcast? = podcasts.get(index)
-        holder.bindEpisodeItem(podcastItem)
+    override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
+        val current = podcasts[position]
+        holder.wordItemView.text = current.title
     }
 
-    class PodcastHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
-
-        var view: View = view
-
-        var episodeItem:Podcast? = null
-
-        init {
-            view.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?){
-            Log.d(javaClass.simpleName, "Hallo")
-        }
-
-        fun bindEpisodeItem(podcast:Podcast?){
-            this.episodeItem = episodeItem
-            // view.list_title.setText(episodeItem)
-        }
+    internal fun setPodcasts(podcasts: List<Podcast>) {
+        this.podcasts = podcasts
+        notifyDataSetChanged()
     }
 
-
+    override fun getItemCount() = podcasts.size
 }

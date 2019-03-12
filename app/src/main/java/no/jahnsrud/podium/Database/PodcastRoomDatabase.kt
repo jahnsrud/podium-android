@@ -16,7 +16,7 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
 
     companion object {
         @Volatile
-        private var INSTANCE:PodcastRoomDatabase? = null
+        private var INSTANCE: PodcastRoomDatabase? = null
 
         fun getDatabase(context: Context, scope: CoroutineScope): PodcastRoomDatabase {
             val tempInstance = INSTANCE
@@ -30,8 +30,9 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
                     context.applicationContext,
 
                     PodcastRoomDatabase::class.java,
-                    "podcasts")
-                    .addCallback(WordDatabaseCallback(scope))
+                    "podcasts"
+                )
+                    .addCallback(PodcastDatabaseCallback(scope))
                     .build()
                 INSTANCE = instance
 
@@ -40,7 +41,7 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
         }
 
 
-        private class WordDatabaseCallback(
+        private class PodcastDatabaseCallback(
             private val scope: CoroutineScope
         ) : RoomDatabase.Callback() {
 
@@ -53,15 +54,18 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
                 }
             }
 
-            fun populateDatabase(wordDao: PodcastDao) {
-                // wordDao.deleteAll()
+            fun populateDatabase(podcastDao: PodcastDao) {
+                // podcastDao.deleteAll()
 
+                val p1 = Podcast("P1", "Podcast 1", "","")
+                val p2 = Podcast("P2", "Podcast 2", "","")
 
+                podcastDao.insert(p1)
+                podcastDao.insert(p2)
 
             }
         }
 
-    }
     }
 
 }

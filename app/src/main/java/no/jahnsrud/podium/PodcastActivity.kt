@@ -13,7 +13,7 @@ class PodcastActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_podcast)
 
-        val mockPod: Podcast = Podcast()
+        val mockPod: Podcast = Podcast("", "", "", "")
         mockPod.title = "MockPod™"
         mockPod.id = "hey01"
 

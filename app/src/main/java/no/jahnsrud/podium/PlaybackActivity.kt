@@ -24,7 +24,7 @@ class PlaybackActivity : AppCompatActivity() {
 
     fun updatePodcast() {
 
-        val mockPod: Podcast = Podcast()
+        val mockPod: Podcast = Podcast("", "", "", "")
         mockPod.title = "MockPod™"
         mockPod.id = "hey01"
         mockPod.coverImageUrl = "https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w"

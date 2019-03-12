@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     fun openPodcast(view: View) {
 
-        val mockPod:Podcast = Podcast()
+        val mockPod:Podcast = Podcast("", "", "", "")
 
         with(mockPod) {
             title = "MockPod"
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     fun testAddPod(view: View) {
 
-        val podcast: Podcast = Podcast()
+        val podcast: Podcast = Podcast("", "", "", "")
         podcast.title = "Tes1t Podcast"
         podcast.id = "test02"
 

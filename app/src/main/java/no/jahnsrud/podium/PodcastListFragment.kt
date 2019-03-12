@@ -1,18 +1,21 @@
 package no.jahnsrud.podium
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_podcast_list.*
 import no.jahnsrud.podium.Database.PodcastAdapter
+import no.jahnsrud.podium.Database.PodcastViewModel
 
 class PodcastListFragment : Fragment() {
 
-    lateinit var layoutManager:LinearLayoutManager
-    lateinit var adapter: PodcastAdapter
+    private lateinit var podcastViewModel: PodcastViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -24,26 +27,33 @@ class PodcastListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        layoutManager = LinearLayoutManager(context)
-        list_recycler_view.layoutManager = layoutManager
-
         val podcastManager = PodcastManager()
-        val podcasts = podcastManager.getAllPodcasts()
 
-        adapter = PodcastAdapter(podcasts)
+        configureRecyclerView()
+
+    }
+
+    fun configureRecyclerView() {
+
+        val ctx = context ?: return
+
+        val adapter = PodcastAdapter(ctx)
         list_recycler_view.adapter = adapter
+        list_recycler_view.layoutManager = LinearLayoutManager(ctx)
 
+        podcastViewModel = ViewModelProviders.of(this).get(PodcastViewModel::class.java)
+
+        podcastViewModel.allPodcasts.observe(this, Observer { words ->
+            // Update the cached copy of the words in the adapter.
+            words?.let { adapter.setPodcasts(it) }
+        })
     }
 
     override fun onResume() {
         super.onResume()
         val podcastManager = PodcastManager()
-        podcastManager.betaPrintAllPodcasts()
-
 
     }
-
-
 
 
 }
