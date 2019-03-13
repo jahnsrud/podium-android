@@ -55,13 +55,13 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
             }
 
             fun populateDatabase(podcastDao: PodcastDao) {
-                // podcastDao.deleteAll()
+                podcastDao.deleteAll()
 
-                val p1 = Podcast("P1", "Podcast 1", "","")
-                val p2 = Podcast("P2", "Podcast 2", "","")
+                val p1 = Podcast("RR", "RR.test", "","https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w")
+                val p2 = Podcast("SR", "Serial.test", "","https://www.creativelive.com/blog/wp-content/uploads/2014/12/seriallogo.png")
 
-                // podcastDao.insert(p1)
-                // podcastDao.insert(p2)
+                podcastDao.insert(p1)
+                podcastDao.insert(p2)
 
             }
         }

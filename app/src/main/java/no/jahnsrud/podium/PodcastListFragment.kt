@@ -27,8 +27,6 @@ class PodcastListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val podcastManager = PodcastManager()
-
         configureRecyclerView()
 
     }

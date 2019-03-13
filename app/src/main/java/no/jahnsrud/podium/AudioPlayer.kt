@@ -8,6 +8,7 @@ import java.lang.Exception
 object AudioPlayer {
 
     private var mediaPlayer: MediaPlayer
+    var currentPodcast: Podcast? = null
 
     init {
         mediaPlayer = MediaPlayer()
@@ -15,8 +16,12 @@ object AudioPlayer {
 
     }
 
-    fun playFromEpisode(episode: Episode) {
+    /*
+    It should not be needed to supply the podcast too
+     */
+    fun playFromEpisode(episode: Episode, podcast:Podcast) {
 
+        currentPodcast = podcast
         playFromUrl(episode.streamURL)
 
 
@@ -43,6 +48,14 @@ object AudioPlayer {
         } else {
             mediaPlayer.start()
         }
+
+    }
+
+    fun seekBackward() {
+
+    }
+
+    fun seekForward() {
 
     }
 

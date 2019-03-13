@@ -24,36 +24,10 @@ open class PodcastManager() {
 
     fun addPodcast(podcast:Podcast) {
 
-        print(podcast.title)
-
-        // TODO: FIX
-
         val model = PodcastViewModel(application = Application())
         model.insert(podcast)
 
 
     }
-
-    // TODO: FIX
-    /*
-    fun getAllPodcasts() : RealmResults<Podcast> {
-        val realm: Realm = Realm.getDefaultInstance()
-        val podcasts: RealmResults<Podcast> = realm.where<Podcast>().findAll()
-
-        return podcasts
-
-    }
-
-    fun betaPrintAllPodcasts() {
-
-        println("🚂 All aboard the print train")
-        println("Number of Podcasts: ${getAllPodcasts().size}")
-
-       print(getAllPodcasts().forEach {
-            println(it.id)
-       })
-
-    }
-    */
 
 }

@@ -26,20 +26,12 @@ class PodcastAdapter internal constructor(
         val podcastItemView: TextView = itemView.findViewById(no.jahnsrud.podium.R.id.list_title)
         val podcastImageView: ImageView = itemView.findViewById(no.jahnsrud.podium.R.id.imageView)
 
-        init {
-            itemView.setOnClickListener() {
-
-                val intent = Intent(itemView.context, PodcastActivity::class.java)
-                startActivity(itemView.context, intent, null)
-
-            }
-        }
-
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PodcastViewHolder {
         val itemView = inflater.inflate(no.jahnsrud.podium.R.layout.podcast_list_item, parent, false)
+
         return PodcastViewHolder(itemView)
     }
 
@@ -48,6 +40,11 @@ class PodcastAdapter internal constructor(
         holder.podcastItemView.text = current.title
         Glide.with(holder.itemView).load(current.coverImageUrl).into(holder.podcastImageView)
 
+        holder.itemView.setOnClickListener() {
+            val intent = Intent(holder.itemView.context, PodcastActivity::class.java)
+            intent.putExtra("podcast", current)
+            startActivity(holder.itemView.context, intent, null)
+        }
 
     }
 
