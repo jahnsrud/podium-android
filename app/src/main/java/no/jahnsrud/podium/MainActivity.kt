@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
     fun testAddPod(view: View) {
 
         val podcast: Podcast = Podcast("", "", "", "")
-        podcast.title = "Tes1t Podcast"
-        podcast.id = "test02"
+        podcast.title = "Radioresepsjonen"
+        podcast.id = "id1234"
 
         val manager:PodcastManager = PodcastManager()
         manager.addPodcast(podcast)

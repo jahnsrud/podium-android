@@ -11,23 +11,23 @@ import no.jahnsrud.podium.R
 
 class PodcastAdapter internal constructor(
     context: Context
-) : RecyclerView.Adapter<PodcastAdapter.WordViewHolder>() {
+) : RecyclerView.Adapter<PodcastAdapter.PodcastViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var podcasts = emptyList<Podcast>() // Cached copy of words
+    private var podcasts = emptyList<Podcast>() // Cached copy of pods
 
-    inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val wordItemView: TextView = itemView.findViewById(R.id.list_title)
+    inner class PodcastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val podcastItemView: TextView = itemView.findViewById(R.id.list_title)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PodcastViewHolder {
         val itemView = inflater.inflate(R.layout.podcast_list_item, parent, false)
-        return WordViewHolder(itemView)
+        return PodcastViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PodcastViewHolder, position: Int) {
         val current = podcasts[position]
-        holder.wordItemView.text = current.title
+        holder.podcastItemView.text = current.title
     }
 
     internal fun setPodcasts(podcasts: List<Podcast>) {

@@ -11,8 +11,10 @@
             android:text="*Podcast Title*"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="131dp" android:id="@+id/titleTextView" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/titleTextView" android:layout_marginTop="28dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
     <fragment
             android:layout_width="384dp"
             android:layout_height="374dp" android:name="no.jahnsrud.podium.EpisodeListFragment"
@@ -20,4 +22,12 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"/>
+    <Button
+            android:text="Shuffle Play [beta]"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button8" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            android:onClick="shufflePlay"/>
 </android.support.constraint.ConstraintLayout>

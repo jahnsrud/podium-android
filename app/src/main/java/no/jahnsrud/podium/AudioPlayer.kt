@@ -1,6 +1,8 @@
 package no.jahnsrud.podium
 
 import android.media.MediaPlayer
+import no.jahnsrud.podium.Models.Episode
+import no.jahnsrud.podium.Models.Podcast
 import java.lang.Exception
 
 object AudioPlayer {
@@ -10,6 +12,13 @@ object AudioPlayer {
     init {
         mediaPlayer = MediaPlayer()
         // mediaPlayer.setAudioAttributes(AudioAttributes.CONTENT_TYPE_MUSIC)
+
+    }
+
+    fun playFromEpisode(episode: Episode) {
+
+        playFromUrl(episode.streamURL)
+
 
     }
 

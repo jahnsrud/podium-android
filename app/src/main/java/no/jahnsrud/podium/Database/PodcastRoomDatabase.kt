@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import no.jahnsrud.podium.Models.Podcast
 
-@Database(entities = [Podcast::class], version = 1)
+@Database(entities = [Podcast::class], version = 1, exportSchema = false)
 abstract class PodcastRoomDatabase : RoomDatabase() {
     abstract fun podcastDao(): PodcastDao
 
@@ -60,8 +60,8 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
                 val p1 = Podcast("P1", "Podcast 1", "","")
                 val p2 = Podcast("P2", "Podcast 2", "","")
 
-                podcastDao.insert(p1)
-                podcastDao.insert(p2)
+                // podcastDao.insert(p1)
+                // podcastDao.insert(p2)
 
             }
         }

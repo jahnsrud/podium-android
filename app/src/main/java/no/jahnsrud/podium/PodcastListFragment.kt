@@ -43,15 +43,14 @@ class PodcastListFragment : Fragment() {
 
         podcastViewModel = ViewModelProviders.of(this).get(PodcastViewModel::class.java)
 
-        podcastViewModel.allPodcasts.observe(this, Observer { words ->
-            // Update the cached copy of the words in the adapter.
-            words?.let { adapter.setPodcasts(it) }
+        podcastViewModel.allPodcasts.observe(this, Observer { podcasts ->
+            // Update the cached copy of the pods in the adapter.
+            podcasts?.let { adapter.setPodcasts(it) }
         })
     }
 
     override fun onResume() {
         super.onResume()
-        val podcastManager = PodcastManager()
 
     }
 

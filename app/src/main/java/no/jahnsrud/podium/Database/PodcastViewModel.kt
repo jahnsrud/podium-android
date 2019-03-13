@@ -23,7 +23,7 @@ class PodcastViewModel(application: Application) : AndroidViewModel(application)
     init {
         val podcastDao = PodcastRoomDatabase.getDatabase(application, scope).podcastDao()
         repository = PodcastRepository(podcastDao)
-        allPodcasts = repository.allWords
+        allPodcasts = repository.allPodcasts
 
     }
 
