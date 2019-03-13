@@ -9,6 +9,7 @@ object AudioPlayer {
 
     private var mediaPlayer: MediaPlayer
     var currentPodcast: Podcast? = null
+    var currentEpisode: Episode? = null
 
     init {
         mediaPlayer = MediaPlayer()
@@ -22,6 +23,7 @@ object AudioPlayer {
     fun playFromEpisode(episode: Episode, podcast:Podcast) {
 
         currentPodcast = podcast
+        currentEpisode = episode
         playFromUrl(episode.streamURL)
 
 

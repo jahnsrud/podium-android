@@ -11,4 +11,18 @@ open class Episode (
     @ColumnInfo(name = "description") var description:String,
     @ColumnInfo(name = "title") var streamURL:String
 
+/*
+Length in seconds
+Playback Position
+finishedListening
+isAvailableOffline
+Podcast
+GUID
+publishDate
+lastPlayedDate
+lastUpdated
+  season, episodenumber, episodetype
+
+ */
+
     )

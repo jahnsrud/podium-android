@@ -15,7 +15,7 @@ import java.lang.Exception
 class PlaybackActivity : AppCompatActivity() {
 
     var currentPodcast:Podcast? = null
-    val currentEpisode:Episode = Episode("Radioresepsjonen.test", "Testepisode", "Test", "https://nl.nrk.no/podkast/aps/10908/radioresepsjonen_2018-12-17_1255_3633.MP3")
+    var currentEpisode:Episode? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,13 @@ class PlaybackActivity : AppCompatActivity() {
             currentPodcast = Podcast("", "", "", "")
         }
 
-        titleText.text = currentEpisode.title
+        if (AudioPlayer.currentEpisode != null) {
+            currentEpisode = AudioPlayer.currentEpisode
+        } else {
+            currentEpisode = Episode("Radioresepsjonen.test", "Testepisode", "Test", "https://nl.nrk.no/podkast/aps/10908/radioresepsjonen_2018-12-17_1255_3633.MP3")
+        }
+
+        titleText.text = currentEpisode?.title
         subtitleText.text = currentPodcast?.title
         Glide.with(this).load(currentPodcast?.coverImageUrl).into(coverImageView)
 
@@ -51,8 +57,4 @@ class PlaybackActivity : AppCompatActivity() {
         AudioPlayer.seekForward()
     }
 
-    fun betaPlayFromSource(view: View) {
-        AudioPlayer.playFromUrl(currentEpisode.streamURL)
-
-    }
 }

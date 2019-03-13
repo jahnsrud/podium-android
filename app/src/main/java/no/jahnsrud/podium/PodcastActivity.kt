@@ -1,5 +1,6 @@
 package no.jahnsrud.podium
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,12 +20,9 @@ class PodcastActivity : AppCompatActivity() {
         if (this.intent.getSerializableExtra("podcast") != null) {
             podcast = intent.getSerializableExtra("podcast") as? Podcast
         } else {
-            val mockPod: Podcast = Podcast("", "", "", "")
-            mockPod.title = "MockPod™"
-            mockPod.id = "hey01"
-            mockPod.coverImageUrl = "https://i.pinimg.com/originals/33/07/37/330737871eb6b5258ff38f4d441bfc1e.png"
 
-            this.podcast = mockPod
+            //
+            this.podcast = Podcast("hey01", "MockPod™", "", "https://i.pinimg.com/originals/33/07/37/330737871eb6b5258ff38f4d441bfc1e.png")
         }
 
 
@@ -42,9 +40,15 @@ class PodcastActivity : AppCompatActivity() {
 
     fun shufflePlay(view: View) {
 
-        val episode = Episode("", "", "", "https://nl.nrk.no/podkast/aps/10908/radioresepsjonen_2018-12-17_1255_3633.MP3")
+        val episode = Episode("", "Test Title", "Test Description", "https://nl.nrk.no/podkast/aps/10908/radioresepsjonen_2018-12-17_1255_3633.MP3")
         AudioPlayer.playFromEpisode(episode, podcast!!)
+        openPlaybackActivity()
 
+    }
+
+    fun openPlaybackActivity() {
+        val intent = Intent(this, PlaybackActivity::class.java)
+        startActivity(intent)
     }
 
 

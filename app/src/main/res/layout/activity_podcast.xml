@@ -25,8 +25,8 @@
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"/>
     <Button
-            android:text="Shuffle Play [beta]"
-            android:layout_width="wrap_content"
+            android:text="Play"
+            android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:id="@+id/button8" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
