@@ -18,30 +18,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun openPodcast(view: View) {
+    fun openSearch(view: View) {
 
-        val mockPod:Podcast = Podcast("", "", "", "")
-
-        with(mockPod) {
-            title = "MockPod"
-            id = "hey02"
-        }
-
-        val intent = Intent(this, PodcastActivity::class.java)
-        // intent.putExtra("podcast", mockPod)
+        val intent = Intent(this, SearchActivity::class.java)
         startActivity(intent)
-    }
-
-    fun testAddPod(view: View) {
-
-        val podcast: Podcast = Podcast("", "", "", "")
-        podcast.title = "Radioresepsjonen"
-        podcast.id = "id1234"
-
-        val manager:PodcastManager = PodcastManager()
-        manager.addPodcast(podcast)
-
-
 
     }
 
