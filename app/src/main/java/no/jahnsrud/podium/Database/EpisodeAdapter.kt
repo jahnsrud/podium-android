@@ -25,7 +25,6 @@ class EpisodeAdapter internal constructor(
 
     inner class EpisodeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val episodeItemView: TextView = itemView.findViewById(no.jahnsrud.podium.R.id.list_title)
-        val episodeImageView: ImageView = itemView.findViewById(no.jahnsrud.podium.R.id.imageView)
 
 
     }

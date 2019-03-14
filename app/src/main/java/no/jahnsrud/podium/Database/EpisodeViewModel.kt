@@ -21,8 +21,8 @@ class EpisodeViewModel(application: Application) : AndroidViewModel(application)
     private val scope = CoroutineScope(coroutineContext)
 
     init {
-        val podcastDao = PodcastRoomDatabase.getDatabase(application, scope).podcastDao()
-        repository = PodiumRepository<PodcastDao>(podcastDao)
+        val episodeDao = EpisodeRoomDatabase.getDatabase(application, scope).episodeDao()
+        repository = PodiumRepository(episodeDao)
         allEpisodes = repository.allEpisodes
 
     }
