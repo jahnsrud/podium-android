@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import no.jahnsrud.podium.Models.Podcast
 import android.support.v4.content.ContextCompat.startActivity
 import android.content.Intent
+import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.PlaybackActivity
 import no.jahnsrud.podium.PodcastActivity
@@ -31,20 +32,19 @@ class EpisodeAdapter internal constructor(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder {
         val itemView = inflater.inflate(no.jahnsrud.podium.R.layout.episode_list_item, parent, false)
-
         return EpisodeViewHolder(itemView)
+
     }
 
     override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
         val current = episodes[position]
         holder.episodeItemView.text = current.title
-        // Glide.with(holder.itemView).load(current.coverImageUrl).into(holder.episodeImageView)
-
         holder.itemView.setOnClickListener() {
-            /*val intent = Intent(holder.itemView.context, PodcastActivity::class.java)
-            intent.putExtra("podcast", current)
+
+            AudioPlayer.playFromEpisode(current, Podcast("", "", "", ""))
+            val intent = Intent(holder.itemView.context, PlaybackActivity::class.java)
             startActivity(holder.itemView.context, intent, null)
-            */
+
         }
 
     }

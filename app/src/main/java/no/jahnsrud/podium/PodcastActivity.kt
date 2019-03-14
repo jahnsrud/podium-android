@@ -38,18 +38,5 @@ class PodcastActivity : AppCompatActivity() {
 
     }
 
-    fun shufflePlay(view: View) {
-
-        val episode = Episode("", "Test Title", "Test Description", "https://nl.nrk.no/podkast/aps/10908/radioresepsjonen_2018-12-17_1255_3633.MP3")
-        AudioPlayer.playFromEpisode(episode, podcast!!)
-        openPlaybackActivity()
-
-    }
-
-    fun openPlaybackActivity() {
-        val intent = Intent(this, PlaybackActivity::class.java)
-        startActivity(intent)
-    }
-
 
 }
