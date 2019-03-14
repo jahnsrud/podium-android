@@ -11,6 +11,8 @@ import com.bumptech.glide.Glide
 import no.jahnsrud.podium.Models.Podcast
 import android.support.v4.content.ContextCompat.startActivity
 import android.content.Intent
+import kotlinx.android.synthetic.main.episode_list_item.view.*
+import kotlinx.android.synthetic.main.podcast_list_item.view.*
 import no.jahnsrud.podium.PlaybackActivity
 import no.jahnsrud.podium.PodcastActivity
 
@@ -24,8 +26,6 @@ class PodcastAdapter internal constructor(
 
     inner class PodcastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val podcastItemView: TextView = itemView.findViewById(no.jahnsrud.podium.R.id.list_title)
-        val podcastImageView: ImageView = itemView.findViewById(no.jahnsrud.podium.R.id.imageView)
-
 
     }
 
@@ -37,8 +37,9 @@ class PodcastAdapter internal constructor(
 
     override fun onBindViewHolder(holder: PodcastViewHolder, position: Int) {
         val current = podcasts[position]
+
         holder.podcastItemView.text = current.title
-        Glide.with(holder.itemView).load(current.coverImageUrl).into(holder.podcastImageView)
+        Glide.with(holder.itemView).load(current.coverImageUrl).into(holder.itemView.imageView)
 
         holder.itemView.setOnClickListener() {
             val intent = Intent(holder.itemView.context, PodcastActivity::class.java)

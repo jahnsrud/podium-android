@@ -5,16 +5,14 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import com.bumptech.glide.Glide
 import no.jahnsrud.podium.Models.Podcast
 import android.support.v4.content.ContextCompat.startActivity
 import android.content.Intent
+import kotlinx.android.synthetic.main.episode_list_item.view.*
 import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.PlaybackActivity
-import no.jahnsrud.podium.PodcastActivity
 
 
 class EpisodeAdapter internal constructor(
@@ -25,8 +23,6 @@ class EpisodeAdapter internal constructor(
     private var episodes = emptyList<Episode>() // Cached copy of pods
 
     inner class EpisodeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val episodeItemView: TextView = itemView.findViewById(no.jahnsrud.podium.R.id.list_title)
-
 
     }
 
@@ -38,7 +34,9 @@ class EpisodeAdapter internal constructor(
 
     override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
         val current = episodes[position]
-        holder.episodeItemView.text = current.title
+
+        holder.itemView.list_title.text = current.title
+        holder.itemView.list_description.text = current.description
         holder.itemView.setOnClickListener() {
 
             AudioPlayer.playFromEpisode(current, Podcast("", "", "", ""))
