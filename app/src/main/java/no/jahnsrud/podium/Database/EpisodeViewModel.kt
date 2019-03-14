@@ -7,13 +7,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import no.jahnsrud.podium.Models.Podcast
+import no.jahnsrud.podium.Models.Episode
 import kotlin.coroutines.CoroutineContext
 
-class PodcastViewModel(application: Application) : AndroidViewModel(application) {
+class EpisodeViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: PodiumRepository
-    val allPodcasts: LiveData<List<Podcast>>
+    val allEpisodes: LiveData<List<Episode>>
 
     private var parentJob = Job()
     private val coroutineContext: CoroutineContext
@@ -22,8 +22,8 @@ class PodcastViewModel(application: Application) : AndroidViewModel(application)
 
     init {
         val podcastDao = PodcastRoomDatabase.getDatabase(application, scope).podcastDao()
-        repository = PodiumRepository(podcastDao)
-        allPodcasts = repository.allPodcasts
+        repository = PodiumRepository<PodcastDao>(podcastDao)
+        allEpisodes = repository.allEpisodes
 
     }
 
@@ -32,8 +32,8 @@ class PodcastViewModel(application: Application) : AndroidViewModel(application)
         parentJob.cancel()
     }
 
-    fun insert(podcast: Podcast) = scope.launch(Dispatchers.IO) {
-        repository.insert(podcast)
+    fun insert(episode: Episode) = scope.launch(Dispatchers.IO) {
+        repository.insert(episode)
     }
 
 

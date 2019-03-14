@@ -8,6 +8,7 @@ import android.content.Context
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.Models.Podcast
 
 @Database(entities = [Podcast::class], version = 1, exportSchema = false)
