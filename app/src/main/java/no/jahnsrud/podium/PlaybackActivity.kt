@@ -6,22 +6,45 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.SeekBar
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.Models.Podcast
 import java.lang.Exception
 
-class PlaybackActivity : AppCompatActivity() {
+class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
-    var currentPodcast:Podcast? = null
-    var currentEpisode:Episode? = null
+    var currentPodcast: Podcast? = null
+    var currentEpisode: Episode? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playback)
 
         updatePodcast()
+        updateProgress()
+
+
+        seekBar.setOnSeekBarChangeListener(this)
+
+    }
+
+    // SeekBar implementation
+    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+    }
+
+    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+        if (seekBar != null) {
+            AudioPlayer.seekTo(seekBar.progress)
+        }
+
+        updateProgress()
+    }
+
+    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
     }
 
     fun updatePodcast() {
@@ -35,12 +58,22 @@ class PlaybackActivity : AppCompatActivity() {
         if (AudioPlayer.currentEpisode != null) {
             currentEpisode = AudioPlayer.currentEpisode
         } else {
-            currentEpisode = Episode("Radioresepsjonen.test", "Testepisode", "Test", "https://nl.nrk.no/podkast/aps/10908/radioresepsjonen_2018-12-17_1255_3633.MP3")
+            finish()
         }
 
         titleText.text = currentEpisode?.title
         subtitleText.text = currentPodcast?.title
         Glide.with(this).load(currentPodcast?.coverImageUrl).into(coverImageView)
+
+    }
+
+    fun updateProgress() {
+
+        // TODO: format and auto update playback
+
+        totalTimeText.text = "${AudioPlayer.duration/1000}"
+        timePlayedText.text = "${AudioPlayer.currentPosition/1000}"
+
 
     }
 

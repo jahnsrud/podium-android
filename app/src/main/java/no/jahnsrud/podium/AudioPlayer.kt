@@ -5,15 +5,12 @@ import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.Models.Podcast
 import java.lang.Exception
 
-object AudioPlayer {
+object AudioPlayer : MediaPlayer() {
 
-    private var mediaPlayer: MediaPlayer
     var currentPodcast: Podcast? = null
     var currentEpisode: Episode? = null
 
     init {
-        mediaPlayer = MediaPlayer()
-        // mediaPlayer.setAudioAttributes(AudioAttributes.CONTENT_TYPE_MUSIC)
 
     }
 
@@ -31,11 +28,11 @@ object AudioPlayer {
 
     fun playFromUrl(url:String) {
         try {
-            mediaPlayer.setDataSource(url)
-            mediaPlayer.prepareAsync()
+            setDataSource(url)
+            prepareAsync()
 
-            mediaPlayer.setOnPreparedListener {
-                mediaPlayer.start()
+            setOnPreparedListener {
+                start()
             }
         } catch (e: Exception) {
             println(e)
@@ -44,11 +41,11 @@ object AudioPlayer {
 
     fun playPause() {
 
-        if (mediaPlayer.isPlaying) {
+        if (isPlaying) {
 
-            mediaPlayer.pause()
+            pause()
         } else {
-            mediaPlayer.start()
+            start()
         }
 
     }
@@ -60,5 +57,6 @@ object AudioPlayer {
     fun seekForward() {
 
     }
+
 
 }
