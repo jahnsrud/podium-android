@@ -37,7 +37,7 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
         if (seekBar != null) {
-            AudioPlayer.seekTo(seekBar.progress)
+            AudioPlayer.seekTo(progress * 1000)
         }
 
         updateProgress()
