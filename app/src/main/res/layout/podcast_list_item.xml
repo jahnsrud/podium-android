@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="140dp" android:orientation="vertical">
+              android:layout_height="160dp" android:orientation="vertical" android:layout_marginBottom="10dp">
 
     <TextView
             android:id="@+id/list_title"
@@ -10,8 +10,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:paddingLeft="16dp"
-            android:text="Title"
-            android:textStyle="bold"/>
+            android:text="Podcast"
+            android:textStyle="bold" android:textSize="16sp" android:textColor="@color/colorBlack"
+            android:layout_marginTop="8dp"/>
 
     <TextView
             android:id="@+id/list_description"
@@ -21,8 +22,8 @@
             android:paddingLeft="16dp"
             android:text="Description"/>
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" tools:srcCompat="@mipmap/ic_launcher_round"
-            android:id="@+id/imageView"/>
+            android:layout_width="100dp"
+            android:layout_height="100dp" tools:srcCompat="@mipmap/ic_launcher_round"
+            android:id="@+id/imageView" android:layout_marginLeft="16dp" android:layout_marginTop="8dp"/>
 
 </LinearLayout>

@@ -15,6 +15,18 @@ import kotlinx.android.synthetic.main.episode_list_item.view.*
 import kotlinx.android.synthetic.main.podcast_list_item.view.*
 import no.jahnsrud.podium.PlaybackActivity
 import no.jahnsrud.podium.PodcastActivity
+import android.R.attr.src
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.request.RequestOptions
+
+
+
+
+
+
 
 
 class PodcastAdapter internal constructor(
@@ -39,7 +51,11 @@ class PodcastAdapter internal constructor(
         val current = podcasts[position]
 
         holder.podcastItemView.text = current.title
-        Glide.with(holder.itemView).load(current.coverImageUrl).into(holder.itemView.imageView)
+        Glide.with(holder.itemView).load(current.coverImageUrl).apply {
+            RequestOptions.bitmapTransform(RoundedCorners(14))
+        } .into(holder.itemView.imageView)
+
+
 
         holder.itemView.setOnClickListener() {
             val intent = Intent(holder.itemView.context, PodcastActivity::class.java)
