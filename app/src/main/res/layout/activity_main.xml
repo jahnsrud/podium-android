@@ -25,14 +25,14 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="50dp" app:layout_constraintBottom_toTopOf="@+id/nav_view"
-            android:background="#EEEEEE">
+            android:layout_height="60dp" app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            android:background="#EEEEEE" android:onClick="openPlayback" android:padding="10dp">
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" android:layout_marginBottom="8dp"
+                android:layout_height="match_parent" android:layout_marginBottom="8dp"
                 android:id="@+id/linearLayout"
-                android:background="#00A8A8A8">
+                android:background="#00A8A8A8" android:gravity="center_horizontal|center_vertical">
             <TextView
                     android:text="Episode"
                     android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             <TextView
                     android:text="Podcast"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/textView2" android:padding="10dp"/>
+                    android:layout_height="wrap_content" android:id="@+id/textView2"/>
         </LinearLayout>
         <Button
                 android:text="PlayPause"

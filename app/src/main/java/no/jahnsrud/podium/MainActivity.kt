@@ -1,6 +1,7 @@
 package no.jahnsrud.podium
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
@@ -8,6 +9,8 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
+import android.view.View
 
 
 class MainActivity : AppCompatActivity() {
@@ -59,5 +62,10 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return false
+    }
+
+    fun openPlayback(view: View) {
+        val intent = Intent(this@MainActivity, PlaybackActivity::class.java)
+        startActivity(intent)
     }
 }
