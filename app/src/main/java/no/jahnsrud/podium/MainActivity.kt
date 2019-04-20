@@ -7,37 +7,32 @@ import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import android.support.v4.app.Fragment
+
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var textMessage: TextView
 
     @SuppressLint("ResourceType")
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.libraryFragment-> {
-                textMessage.setText(R.string.title_home)
 
-
+                loadFragment(LibraryFragment())
 
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.searchFragment -> {
-                textMessage.setText(R.string.title_search)
 
-                supportFragmentManager
-                    .beginTransaction()
-                    .add(R.id.searchFragment, this.fragment).commit()
+                loadFragment(SearchFragment())
 
-                /*val ft = supportFragmentManager.beginTransaction()
-                ft.replace(R.id, fragment)
-                ft.commit()*/
 
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                textMessage.setText(R.string.title_settings)
+
+                loadFragment(SettingsFragment())
+
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -50,7 +45,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        textMessage = findViewById(R.id.message)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+    }
+
+    private fun loadFragment(fragment: Fragment?): Boolean {
+        //switching fragment 
+        if (fragment != null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, fragment!!)
+                .commit()
+            return true
+        }
+        return false
     }
 }
