@@ -13,7 +13,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="SEARCH!" android:background="#2196F3"/>
+                android:text="SEARCH!"/>
     </LinearLayout>
 
 </FrameLayout>
