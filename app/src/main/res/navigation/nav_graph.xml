@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
-            app:startDestination="@id/mainFragment">
+            android:id="@+id/nav_graph">
 
-    <fragment android:id="@+id/mainFragment" android:name="no.jahnsrud.podium.LibraryFragment"
-              android:label="fragment_main" tools:layout="@layout/fragment_library">
-        <action android:id="@+id/action_mainFragment_to_podcastFragment" app:destination="@id/podcastFragment"/>
-    </fragment>
-    <fragment android:id="@+id/podcastFragment" android:name="no.jahnsrud.podium.PodcastFragment"
-              android:label="fragment_podcast" tools:layout="@layout/fragment_podcast"/>
-    <fragment android:id="@+id/podcastListFragment" android:name="no.jahnsrud.podium.PodcastListFragment"
-              android:label="PodcastListFragment">
-        <action android:id="@+id/action_podcastListFragment_to_podcastFragment" app:destination="@id/podcastFragment"/>
-    </fragment>
-    <activity android:id="@+id/mainActivity" android:name="no.jahnsrud.podium.MainActivity"
-              android:label="activity_main" tools:layout="@layout/activity_main"/>
 </navigation>

@@ -21,9 +21,11 @@ class LibraryFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        /*
         openPodcastButton.setOnClickListener({
             Navigation.findNavController(this.view!!).navigate(R.id.action_mainFragment_to_podcastFragment)
         })
+        */
 
     }
 
