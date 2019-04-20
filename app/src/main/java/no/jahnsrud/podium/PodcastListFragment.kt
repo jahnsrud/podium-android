@@ -37,7 +37,7 @@ class PodcastListFragment : Fragment() {
 
         val adapter = PodcastAdapter(ctx)
         list_recycler_view.adapter = adapter
-        list_recycler_view.layoutManager = LinearLayoutManager(ctx)
+        list_recycler_view.layoutManager = LinearLayoutManager(ctx) as RecyclerView.LayoutManager?
 
         podcastViewModel = ViewModelProviders.of(this).get(PodcastViewModel::class.java)
 
