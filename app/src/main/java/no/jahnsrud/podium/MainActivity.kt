@@ -15,13 +15,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openPlaybackActivity(view: View) {
-        val intent = Intent(this, PlaybackActivity::class.java)
+        val intent = Intent(this, PlaybackFragment::class.java)
         startActivity(intent)
     }
 
     fun openSearch(view: View) {
 
-        val intent = Intent(this, SearchActivity::class.java)
+        val intent = Intent(this, SearchFragment::class.java)
         startActivity(intent)
 
     }

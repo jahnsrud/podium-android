@@ -1,34 +1,41 @@
 package no.jahnsrud.podium
 
-import android.media.AudioAttributes
-import android.media.MediaPlayer
+import android.content.Context
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.SeekBar
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.Models.Podcast
-import java.lang.Exception
 
-class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
+class PlaybackFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
     var currentPodcast: Podcast? = null
     var currentEpisode: Episode? = null
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_playback, container, false)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_playback)
 
         updatePodcast()
         updateProgress()
 
+        // TODO:
+        // seekBar.setOnSeekBarChangeListener(this)
 
-        seekBar.setOnSeekBarChangeListener(this)
 
     }
+
 
     // SeekBar implementation
     override fun onStopTrackingTouch(seekBar: SeekBar?) {
@@ -58,12 +65,15 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         if (AudioPlayer.currentEpisode != null) {
             currentEpisode = AudioPlayer.currentEpisode
         } else {
-            finish()
+            // TODO: exit
+            // finish()
         }
 
-        titleText.text = currentEpisode?.title
-        subtitleText.text = currentPodcast?.title
-        Glide.with(this).load(currentPodcast?.coverImageUrl).into(coverImageView)
+        // TODO!
+
+        // titleText.text = currentEpisode?.title
+        // subtitleText.text = currentPodcast?.title
+        // Glide.with(this).load(currentPodcast?.coverImageUrl).into(coverImageView)
 
     }
 
@@ -71,8 +81,8 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         // TODO: format and auto update playback
 
-        totalTimeText.text = "${AudioPlayer.duration/1000}"
-        timePlayedText.text = "${AudioPlayer.currentPosition/1000}"
+        // totalTimeText.text = "${AudioPlayer.duration/1000}"
+        // timePlayedText.text = "${AudioPlayer.currentPosition/1000}"
 
 
     }
@@ -89,5 +99,9 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
     fun seekForward(view: View) {
         AudioPlayer.seekForward()
     }
+
+
+
+
 
 }

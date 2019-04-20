@@ -23,7 +23,6 @@ object AudioPlayer : MediaPlayer() {
         currentEpisode = episode
         playFromUrl(episode.streamURL)
 
-
     }
 
     fun playFromUrl(url:String) {
