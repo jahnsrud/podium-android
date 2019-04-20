@@ -1,5 +1,6 @@
 package no.jahnsrud.podium
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.FragmentManager
@@ -10,10 +11,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textMessage: TextView
+
+    @SuppressLint("ResourceType")
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.libraryFragment-> {
                 textMessage.setText(R.string.title_home)
+
 
 
 
@@ -22,12 +26,13 @@ class MainActivity : AppCompatActivity() {
             R.id.searchFragment -> {
                 textMessage.setText(R.string.title_search)
 
+                supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.searchFragment, this.fragment).commit()
 
-                val manager = supportFragmentManager
-                val transaction = manager.beginTransaction()
-                transaction.add(R.layout.fragment_search, this.fragment)
-                transaction.commit()
-
+                /*val ft = supportFragmentManager.beginTransaction()
+                ft.replace(R.id, fragment)
+                ft.commit()*/
 
                 return@OnNavigationItemSelectedListener true
             }
