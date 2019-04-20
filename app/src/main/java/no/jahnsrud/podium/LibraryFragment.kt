@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_library.*
 
 
@@ -21,7 +22,7 @@ class LibraryFragment : Fragment() {
         super.onStart()
 
         openPodcastButton.setOnClickListener({
-            print("Should probably do something here :)")
+            Navigation.findNavController(this.view!!).navigate(R.id.action_mainFragment_to_podcastFragment)
         })
 
     }

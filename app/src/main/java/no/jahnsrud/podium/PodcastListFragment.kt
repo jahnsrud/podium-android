@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
+import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_podcast_list.*
 import no.jahnsrud.podium.Database.PodcastAdapter
 import no.jahnsrud.podium.Database.PodcastViewModel
@@ -45,6 +46,9 @@ class PodcastListFragment : Fragment() {
             // Update the cached copy of the pods in the adapter.
             podcasts?.let { adapter.setPodcasts(it) }
         })
+
+
+
     }
 
     override fun onResume() {

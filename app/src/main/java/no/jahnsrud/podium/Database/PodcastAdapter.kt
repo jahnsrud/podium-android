@@ -10,10 +10,12 @@ import com.bumptech.glide.Glide
 import no.jahnsrud.podium.Models.Podcast
 import android.support.v4.content.ContextCompat.startActivity
 import android.content.Intent
+import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.podcast_list_item.view.*
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import no.jahnsrud.podium.PodcastFragment
+import no.jahnsrud.podium.R
 
 
 class PodcastAdapter internal constructor(
@@ -45,9 +47,15 @@ class PodcastAdapter internal constructor(
 
 
         holder.itemView.setOnClickListener() {
+
+            Navigation.findNavController(holder.itemView).navigate(R.id.action_podcastListFragment_to_podcastFragment)
+
+
+            /*
             val intent = Intent(holder.itemView.context, PodcastFragment::class.java)
             intent.putExtra("podcast", current)
             startActivity(holder.itemView.context, intent, null)
+            */
         }
 
     }
