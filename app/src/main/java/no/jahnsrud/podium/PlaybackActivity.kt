@@ -18,6 +18,7 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playback)
 
+        getSupportActionBar()?.hide();
 
         updatePodcast()
         updateProgress()
