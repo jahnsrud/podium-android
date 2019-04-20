@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/nav_graph">
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/mainActivity">
 
+    <activity android:id="@+id/mainActivity" android:name="no.jahnsrud.podium.MainActivity"
+              android:label="activity_main" tools:layout="@layout/activity_main"/>
+    <fragment android:id="@+id/libraryFragment" android:name="no.jahnsrud.podium.LibraryFragment"
+              android:label="fragment_library" tools:layout="@layout/fragment_library"/>
+    <fragment android:id="@+id/searchFragment" android:name="no.jahnsrud.podium.SearchFragment"
+              android:label="fragment_search" tools:layout="@layout/fragment_search"/>
 </navigation>
