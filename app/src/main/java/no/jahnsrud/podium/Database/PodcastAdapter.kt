@@ -47,15 +47,8 @@ class PodcastAdapter internal constructor(
 
         holder.itemView.setOnClickListener() {
 
-            // TODO FIX!
-            // Navigation.findNavController(holder.itemView).navigate(R.id.action_podcastListFragment_to_podcastFragment)
-
-
-            /*
-            val intent = Intent(holder.itemView.context, PodcastFragment::class.java)
-            intent.putExtra("podcast", current)
-            startActivity(holder.itemView.context, intent, null)
-            */
+            // TODO: ADD ARGS!
+            Navigation.findNavController(holder.itemView!!).navigate(R.id.action_libraryFragment_to_podcastFragment)
         }
 
     }

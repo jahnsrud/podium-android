@@ -21,17 +21,6 @@ class LibraryFragment : androidx.fragment.app.Fragment() {
     override fun onStart() {
         super.onStart()
 
-        podcastButton.setOnClickListener({
-            openPodcast()
-        })
-
-
     }
-
-    fun openPodcast() {
-        Navigation.findNavController(this.view!!).navigate(R.id.action_libraryFragment_to_podcastFragment)
-    }
-
-
 
 }

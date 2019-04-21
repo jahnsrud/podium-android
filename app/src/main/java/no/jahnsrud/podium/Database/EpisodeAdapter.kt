@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.episode_list_item.view.*
 import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.Fragments.PlaybackFragment
+import no.jahnsrud.podium.PlaybackActivity
 
 
 class EpisodeAdapter internal constructor(
@@ -38,7 +39,7 @@ class EpisodeAdapter internal constructor(
         holder.itemView.setOnClickListener() {
 
             AudioPlayer.playFromEpisode(current, Podcast("", "", "", ""))
-            val intent = Intent(holder.itemView.context, PlaybackFragment::class.java)
+            val intent = Intent(holder.itemView.context, PlaybackActivity::class.java)
             startActivity(holder.itemView.context, intent, null)
 
         }
