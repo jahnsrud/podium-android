@@ -41,7 +41,6 @@ object AudioPlayer : MediaPlayer() {
     fun playPause() {
 
         if (isPlaying) {
-
             pause()
         } else {
             start()

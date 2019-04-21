@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.SeekBar
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.Models.Podcast
@@ -62,11 +63,10 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
             // finish()
         }
 
-        // TODO!
 
-        // titleText.text = currentEpisode?.title
-        // subtitleText.text = currentPodcast?.title
-        // Glide.with(this).load(currentPodcast?.coverImageUrl).into(coverImageView)
+        titleText.text = currentEpisode?.title
+        subtitleText.text = currentPodcast?.title
+        Glide.with(this).load(currentPodcast?.coverImageUrl).into(coverImageView)
 
     }
 

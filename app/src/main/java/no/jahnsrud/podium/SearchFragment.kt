@@ -21,7 +21,7 @@ class SearchFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        requestFeaturedPodcasts()
+        // requestFeaturedPodcasts()
     }
 
     fun requestFeaturedPodcasts() {
