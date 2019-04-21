@@ -21,13 +21,12 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         setContentView(R.layout.activity_playback)
 
         getSupportActionBar()?.hide();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         updatePodcast()
         updateProgress()
 
         seekBar.setOnSeekBarChangeListener(this)
-
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
     }
 
@@ -59,8 +58,7 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         if (AudioPlayer.currentEpisode != null) {
             currentEpisode = AudioPlayer.currentEpisode
         } else {
-            // TODO: exit
-            // finish()
+            this.finish()
         }
 
 
@@ -72,10 +70,8 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     fun updateProgress() {
 
-        // TODO: format and auto update playback
-
-        // totalTimeText.text = "${AudioPlayer.duration/1000}"
-        // timePlayedText.text = "${AudioPlayer.currentPosition/1000}"
+        totalTimeText.text = "${AudioPlayer.duration/1000}"
+        timePlayedText.text = "${AudioPlayer.currentPosition/1000}"
 
 
     }
