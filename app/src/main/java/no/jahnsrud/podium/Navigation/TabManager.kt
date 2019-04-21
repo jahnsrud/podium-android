@@ -15,7 +15,7 @@ class TabManager(private val mainActivity: MainActivity) {
     private val startDestinations = mapOf(
             R.id.tab_library to R.id.libraryFragment,
             R.id.tab_search to R.id.searchFragment,
-            R.id.tab_settings to R.id.settingsTab
+            R.id.tab_settings to R.id.settingsFragment
     )
     private var currentTabId: Int = R.id.tab_library
     var currentController: NavController? = null
@@ -43,9 +43,9 @@ class TabManager(private val mainActivity: MainActivity) {
         }
     }
 
-    private val homeTabContainer: View by lazy { mainActivity.libraryTabContainer }
-    private val dashboardTabContainer: View by lazy { mainActivity.searchTabContainer }
-    private val notificationsTabContainer: View by lazy { mainActivity.settingsTabContainer }
+    private val libraryTabContainer: View by lazy { mainActivity.libraryTabContainer }
+    private val searchTabContainer: View by lazy { mainActivity.searchTabContainer }
+    private val settingsTabContainer: View by lazy { mainActivity.settingsTabContainer }
 
     fun onSaveInstanceState(outState: Bundle?) {
         outState?.putSerializable(KEY_TAB_HISTORY, tabHistory)
@@ -65,15 +65,15 @@ class TabManager(private val mainActivity: MainActivity) {
         when (tabId) {
             R.id.tab_library -> {
                 currentController = libraryTabController
-                invisibleTabContainerExcept(homeTabContainer)
+                invisibleTabContainerExcept(libraryTabContainer)
             }
             R.id.tab_search -> {
                 currentController = searchTabController
-                invisibleTabContainerExcept(dashboardTabContainer)
+                invisibleTabContainerExcept(searchTabContainer)
             }
             R.id.tab_settings -> {
                 currentController = settingsTabController
-                invisibleTabContainerExcept(notificationsTabContainer)
+                invisibleTabContainerExcept(settingsTabContainer)
             }
         }
         if (addToHistory) {
@@ -105,9 +105,9 @@ class TabManager(private val mainActivity: MainActivity) {
 
 
     private fun invisibleTabContainerExcept(container: View) {
-        homeTabContainer.isInvisible = true
-        dashboardTabContainer.isInvisible = true
-        notificationsTabContainer.isInvisible = true
+        libraryTabContainer.isInvisible = true
+        searchTabContainer.isInvisible = true
+        settingsTabContainer.isInvisible = true
 
         container.isInvisible = false
     }

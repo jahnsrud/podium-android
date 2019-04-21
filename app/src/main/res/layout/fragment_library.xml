@@ -3,7 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".LibraryFragment">
+             tools:context=".Fragments.LibraryFragment">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -14,7 +14,7 @@
                 android:layout_height="wrap_content" android:id="@+id/podcastButton"/>
         <fragment
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:name="no.jahnsrud.podium.PodcastListFragment"
+                android:layout_height="match_parent" android:name="no.jahnsrud.podium.Fragments.PodcastListFragment"
                 android:id="@+id/fragment"/>
     </LinearLayout>
 </FrameLayout>

@@ -7,6 +7,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
+import android.view.View
 import no.jahnsrud.podium.Navigation.TabManager
 
 
@@ -57,6 +58,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return true
     }
 
+
+    fun openPlayback(view: View) {
+        val intent = Intent(this@MainActivity, PlaybackActivity::class.java)
+        startActivity(intent)
+    }
 
 
 }

@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp" android:id="@+id/libraryTabContainer"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginBottom="596dp" app:layout_constraintBottom_toTopOf="@+id/playbackBar">
+            app:layout_constraintBottom_toTopOf="@+id/playbackBar">
 
         <fragment
                 android:layout_width="match_parent"
@@ -22,7 +22,7 @@
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp" android:id="@+id/searchTabContainer" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginBottom="596dp" app:layout_constraintBottom_toTopOf="@+id/playbackBar">
+            app:layout_constraintBottom_toTopOf="@+id/playbackBar">
 
         <fragment
                 android:layout_width="match_parent"
@@ -32,7 +32,7 @@
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp" android:id="@+id/settingsTabContainer" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginBottom="596dp" app:layout_constraintBottom_toTopOf="@+id/playbackBar">
+            app:layout_constraintBottom_toTopOf="@+id/playbackBar">
 
         <fragment
                 android:layout_width="match_parent"

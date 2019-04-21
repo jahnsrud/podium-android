@@ -4,12 +4,16 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
             app:startDestination="@id/libraryFragment">
 
-    <fragment android:id="@+id/libraryFragment" android:name="no.jahnsrud.podium.LibraryFragment"
+    <fragment android:id="@+id/libraryFragment" android:name="no.jahnsrud.podium.Fragments.LibraryFragment"
               android:label="fragment_library" tools:layout="@layout/fragment_library">
         <action android:id="@+id/action_libraryFragment_to_podcastFragment" app:destination="@id/podcastFragment"/>
     </fragment>
-    <fragment android:id="@+id/searchFragment" android:name="no.jahnsrud.podium.SearchFragment"
+    <fragment android:id="@+id/searchFragment" android:name="no.jahnsrud.podium.Fragments.SearchFragment"
               android:label="fragment_search" tools:layout="@layout/fragment_search"/>
-    <fragment android:id="@+id/podcastFragment" android:name="no.jahnsrud.podium.PodcastFragment"
+    <fragment android:id="@+id/podcastFragment" android:name="no.jahnsrud.podium.Fragments.PodcastFragment"
               android:label="fragment_podcast" tools:layout="@layout/fragment_podcast"/>
+
+    <fragment android:id="@+id/settingsFragment" android:name="no.jahnsrud.podium.Fragments.SettingsFragment"
+              android:label="fragment_settings" tools:layout="@layout/fragment_settings"/>
+
 </navigation>
