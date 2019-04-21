@@ -1,11 +1,11 @@
 package no.jahnsrud.podium
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.support.v4.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.Fragment
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_podcast_list.*
 import no.jahnsrud.podium.Database.EpisodeAdapter
 import no.jahnsrud.podium.Database.EpisodeViewModel
 
-class EpisodeListFragment : Fragment() {
+class EpisodeListFragment : androidx.fragment.app.Fragment() {
 
     private lateinit var episodeViewModel: EpisodeViewModel
 
@@ -36,7 +36,7 @@ class EpisodeListFragment : Fragment() {
 
         val adapter = EpisodeAdapter(ctx)
         list_recycler_view.adapter = adapter
-        list_recycler_view.layoutManager = LinearLayoutManager(ctx)
+        list_recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(ctx)
 
         episodeViewModel = ViewModelProviders.of(this).get(EpisodeViewModel::class.java)
 

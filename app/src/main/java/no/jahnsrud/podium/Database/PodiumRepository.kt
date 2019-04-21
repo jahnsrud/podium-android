@@ -1,8 +1,8 @@
 package no.jahnsrud.podium.Database
 
-import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.Dao
-import android.support.annotation.WorkerThread
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.annotation.WorkerThread
 import no.jahnsrud.podium.Models.Episode
 import no.jahnsrud.podium.Models.Podcast
 

@@ -1,12 +1,12 @@
 package no.jahnsrud.podium.Database
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import no.jahnsrud.podium.Models.Podcast
-import android.support.v4.content.ContextCompat.startActivity
+import androidx.core.content.ContextCompat.startActivity
 import android.content.Intent
 import kotlinx.android.synthetic.main.episode_list_item.view.*
 import no.jahnsrud.podium.AudioPlayer
@@ -16,12 +16,12 @@ import no.jahnsrud.podium.PlaybackFragment
 
 class EpisodeAdapter internal constructor(
     context: Context
-) : RecyclerView.Adapter<EpisodeAdapter.EpisodeViewHolder>() {
+) : androidx.recyclerview.widget.RecyclerView.Adapter<EpisodeAdapter.EpisodeViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var episodes = emptyList<Episode>() // Cached copy of pods
 
-    inner class EpisodeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class EpisodeViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     }
 

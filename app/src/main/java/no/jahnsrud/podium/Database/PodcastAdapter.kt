@@ -1,14 +1,14 @@
 package no.jahnsrud.podium.Database
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import no.jahnsrud.podium.Models.Podcast
-import android.support.v4.content.ContextCompat.startActivity
+import androidx.core.content.ContextCompat.startActivity
 import android.content.Intent
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.podcast_list_item.view.*
@@ -19,12 +19,12 @@ import no.jahnsrud.podium.R
 
 class PodcastAdapter internal constructor(
     context: Context
-) : RecyclerView.Adapter<PodcastAdapter.PodcastViewHolder>() {
+) : androidx.recyclerview.widget.RecyclerView.Adapter<PodcastAdapter.PodcastViewHolder>() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var podcasts = emptyList<Podcast>() // Cached copy of pods
 
-    inner class PodcastViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class PodcastViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         val podcastItemView: TextView = itemView.findViewById(no.jahnsrud.podium.R.id.list_title)
 
     }
