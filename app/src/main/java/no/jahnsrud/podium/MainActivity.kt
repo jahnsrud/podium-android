@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
 import android.view.View
 import androidx.transition.Visibility
+import com.google.android.material.snackbar.Snackbar
 import no.jahnsrud.podium.navigation.TabManager
 
 
@@ -64,6 +65,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         val intent = Intent(this@MainActivity, PlaybackActivity::class.java)
         startActivity(intent)
 
+    }
+
+    fun playbackBarInteraction(view: View) {
+        Snackbar.make(view, "Coming soon!", Snackbar.LENGTH_LONG).show()
     }
 
 

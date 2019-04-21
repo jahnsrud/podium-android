@@ -9,11 +9,28 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" android:layout_marginTop="16dp">
         <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="SEARCH!"/>
+                android:layout_height="wrap_content"
+                android:text="Search Podcasts"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/searchTextField" android:hint="Search..."/>
+        <Button
+                android:text="@string/title_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/searchButton"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Featured Podcasts" android:id="@+id/textView"/>
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
     </LinearLayout>
 
 </FrameLayout>

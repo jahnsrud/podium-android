@@ -65,7 +65,7 @@
         <Button
                 android:layout_width="40dp"
                 android:layout_height="wrap_content" android:id="@+id/playPauseButton"
-                android:text="*"/>
+                android:text="*" android:onClick="playbackBarInteraction"/>
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/tabBar"
