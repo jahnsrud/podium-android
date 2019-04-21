@@ -1,10 +1,9 @@
-package no.jahnsrud.podium.Database
+package no.jahnsrud.podium.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
 import androidx.annotation.WorkerThread
-import no.jahnsrud.podium.Models.Episode
-import no.jahnsrud.podium.Models.Podcast
+import no.jahnsrud.podium.models.Episode
+import no.jahnsrud.podium.models.Podcast
 
 class PodiumRepository {
 

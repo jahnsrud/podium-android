@@ -1,4 +1,4 @@
-package no.jahnsrud.podium.Navigation
+package no.jahnsrud.podium.navigation
 
 import android.content.Intent
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package no.jahnsrud.podium.Database
+package no.jahnsrud.podium.database
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import no.jahnsrud.podium.Models.Episode
+import no.jahnsrud.podium.models.Episode
 import kotlin.coroutines.CoroutineContext
 
 class EpisodeViewModel(application: Application) : AndroidViewModel(application) {

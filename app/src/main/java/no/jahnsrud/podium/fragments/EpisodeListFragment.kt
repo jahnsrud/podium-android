@@ -1,4 +1,4 @@
-package no.jahnsrud.podium.Fragments
+package no.jahnsrud.podium.fragments
 
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_podcast_list.*
-import no.jahnsrud.podium.Database.EpisodeAdapter
-import no.jahnsrud.podium.Database.EpisodeViewModel
+import no.jahnsrud.podium.database.EpisodeAdapter
+import no.jahnsrud.podium.database.EpisodeViewModel
 import no.jahnsrud.podium.R
 
 class EpisodeListFragment : androidx.fragment.app.Fragment() {

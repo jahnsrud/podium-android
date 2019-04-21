@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
 import android.view.View
-import no.jahnsrud.podium.Navigation.TabManager
+import no.jahnsrud.podium.navigation.TabManager
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {

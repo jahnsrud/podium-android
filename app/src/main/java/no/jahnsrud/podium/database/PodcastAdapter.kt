@@ -1,15 +1,12 @@
-package no.jahnsrud.podium.Database
+package no.jahnsrud.podium.database
 
 import android.content.Context
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import no.jahnsrud.podium.Models.Podcast
-import androidx.core.content.ContextCompat.startActivity
-import android.content.Intent
+import no.jahnsrud.podium.models.Podcast
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.podcast_list_item.view.*
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners

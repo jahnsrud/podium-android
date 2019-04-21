@@ -1,4 +1,4 @@
-package no.jahnsrud.podium.Navigation
+package no.jahnsrud.podium.navigation
 
 import java.io.Serializable
 import java.util.ArrayList

@@ -1,5 +1,4 @@
-package no.jahnsrud.podium.Fragments
-
+package no.jahnsrud.podium.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_podcast.*
-import no.jahnsrud.podium.Models.Podcast
+import no.jahnsrud.podium.models.Podcast
 import no.jahnsrud.podium.R
 
 var podcast: Podcast? = null

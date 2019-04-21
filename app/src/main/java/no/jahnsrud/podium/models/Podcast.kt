@@ -1,4 +1,4 @@
-package no.jahnsrud.podium.Models
+package no.jahnsrud.podium.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

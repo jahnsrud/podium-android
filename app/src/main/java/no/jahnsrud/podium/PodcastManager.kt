@@ -4,8 +4,8 @@ import android.app.Application
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import no.jahnsrud.podium.Database.PodcastViewModel
-import no.jahnsrud.podium.Models.Podcast
+import no.jahnsrud.podium.database.PodcastViewModel
+import no.jahnsrud.podium.models.Podcast
 import kotlin.coroutines.CoroutineContext
 
 open class PodcastManager() {

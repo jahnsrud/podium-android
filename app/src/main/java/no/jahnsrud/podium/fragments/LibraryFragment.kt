@@ -1,11 +1,9 @@
-package no.jahnsrud.podium.Fragments
+package no.jahnsrud.podium.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_library.*
 import no.jahnsrud.podium.R
 
 

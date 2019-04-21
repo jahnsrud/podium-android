@@ -1,8 +1,8 @@
 package no.jahnsrud.podium
 
 import android.media.MediaPlayer
-import no.jahnsrud.podium.Models.Episode
-import no.jahnsrud.podium.Models.Podcast
+import no.jahnsrud.podium.models.Episode
+import no.jahnsrud.podium.models.Podcast
 import java.lang.Exception
 
 object AudioPlayer : MediaPlayer() {

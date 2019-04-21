@@ -1,4 +1,4 @@
-package no.jahnsrud.podium.Database
+package no.jahnsrud.podium.database
 
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.room.Database
@@ -8,7 +8,7 @@ import android.content.Context
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import no.jahnsrud.podium.Models.Episode
+import no.jahnsrud.podium.models.Episode
 
 @Database(entities = [Episode::class], version = 1, exportSchema = false)
 abstract class EpisodeRoomDatabase : RoomDatabase() {

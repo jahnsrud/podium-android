@@ -1,16 +1,15 @@
-package no.jahnsrud.podium.Database
+package no.jahnsrud.podium.database
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import no.jahnsrud.podium.Models.Podcast
+import no.jahnsrud.podium.models.Podcast
 import androidx.core.content.ContextCompat.startActivity
 import android.content.Intent
 import kotlinx.android.synthetic.main.episode_list_item.view.*
 import no.jahnsrud.podium.AudioPlayer
-import no.jahnsrud.podium.Models.Episode
-import no.jahnsrud.podium.Fragments.PlaybackFragment
+import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.PlaybackActivity
 
 

@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.SeekBar
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_playback.*
-import no.jahnsrud.podium.Models.Episode
-import no.jahnsrud.podium.Models.Podcast
+import no.jahnsrud.podium.models.Episode
+import no.jahnsrud.podium.models.Podcast
 
 class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
