@@ -11,7 +11,7 @@
             android:layout_gravity="left"
             android:paddingLeft="16dp"
             android:text="Title"
-            android:textStyle="bold"/>
+            android:textStyle="bold" android:textColor="#FD000000"/>
 
     <TextView
             android:id="@+id/list_description"

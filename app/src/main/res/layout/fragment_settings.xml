@@ -11,9 +11,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <Button
-                android:text="Button"
+                android:text="Login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/button3"/>
+        <Button
+                android:text="Downloads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/button"/>
+        <Button
+                android:text="Forward: _ seconds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/button2"/>
+        <Button
+                android:text="Backward: _ seconds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/button4"/>
+        <Button
+                android:text="Preferred Mode: Stream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/button5"/>
+        <Button
+                android:text="Sorting?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/button6"/>
     </LinearLayout>
 
 </FrameLayout>
