@@ -10,12 +10,13 @@ import java.util.concurrent.Executors
 class FeedParser {
 
     val FEATURED_URL:String = "https://itunes.apple.com/no/rss/toppodcasts/limit=50/explicit=true/json"
+    val SEARCH_ROOT_URL:String = "https://itunes.apple.com/search?entity=podcast&limit=80"
 
     fun requestFeaturedPodcasts() {
 
         print("Printing request...")
         Executors.newSingleThreadExecutor().execute {
-            
+
             val response = URL(FEATURED_URL).readText()
 
             val klaxon = Klaxon()
@@ -39,6 +40,12 @@ class FeedParser {
                 // val yourObj = Klaxon().parseFromJsonObject<Haltestelle>(obj)
             }
         }
+    }
+
+    fun searchPodcastDirectory(search: String) {
+        val searchTerm = "&term=${search}"
+        val requestUrl = SEARCH_ROOT_URL + searchTerm
+
     }
 
 }
