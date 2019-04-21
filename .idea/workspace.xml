@@ -113,10 +113,7 @@
     <last-search-timestamp>1555766857095</last-search-timestamp>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a731a21f-b3ca-4e4c-8ca0-f26510e53b34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/episode_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/episode_list_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a731a21f-b3ca-4e4c-8ca0-f26510e53b34" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -743,7 +740,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555874367729</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Setting up some fine things">
+      <created>1555874671921</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1555874671921</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -783,7 +787,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added the famous bottom navigation. More soon!" />
     <MESSAGE value="Important fixes!" />
     <MESSAGE value="Hopefully some progress soon" />
     <MESSAGE value="It's somewhat working, but needs LOADS of polishing" />
@@ -808,7 +811,8 @@
     <MESSAGE value="UI Improvements" />
     <MESSAGE value="Some work on the search feature" />
     <MESSAGE value="Cleanup and improvements!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup and improvements!" />
+    <MESSAGE value="Setting up some fine things" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up some fine things" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
