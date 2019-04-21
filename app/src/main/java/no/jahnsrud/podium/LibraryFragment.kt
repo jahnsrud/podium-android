@@ -23,10 +23,15 @@ class LibraryFragment : Fragment() {
 
 
         podcastButton.setOnClickListener({
-            Navigation.findNavController(this.view!!).navigate(R.id.action_libraryFragment_to_podcastFragment)
+
+            openPodcast()
         })
 
 
+    }
+
+    fun openPodcast() {
+        Navigation.findNavController(this.view!!).navigate(R.id.action_libraryFragment_to_podcastFragment)
     }
 
 

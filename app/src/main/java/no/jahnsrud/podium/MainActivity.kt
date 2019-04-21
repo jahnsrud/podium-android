@@ -12,6 +12,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.view.View
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import kotlinx.android.synthetic.main.fragment_library.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -74,6 +78,10 @@ class MainActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.main_container,fragment1, "1").commit();
+
+
+
+        // navView.setupWithNavController(Navigation.findNavController(this, R.id.main_container))
 
 
 
