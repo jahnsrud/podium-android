@@ -8,14 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
 import android.view.View
+import androidx.transition.Visibility
 import no.jahnsrud.podium.navigation.TabManager
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
 
     /**
-     * Much of the Tab Bar logic is inspired and by the MultiNavProject by moallemi
-     * I adapted much of the logic, but made improvements too
+     * Much of the Tab Bar logic is inspired by the MultiNavProject by moallemi
+     * I adapted much of the logic, but made improvements, too
      * https://github.com/moallemi/MultiNavHost
      */
 
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     fun openPlayback(view: View) {
         val intent = Intent(this@MainActivity, PlaybackActivity::class.java)
         startActivity(intent)
+
     }
 
 

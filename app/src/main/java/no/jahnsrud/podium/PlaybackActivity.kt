@@ -64,7 +64,7 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         if (AudioPlayer.currentEpisode != null) {
             currentEpisode = AudioPlayer.currentEpisode
         } else {
-            this.finish()
+            // this.finish()
         }
 
 

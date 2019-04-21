@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="66dp" app:layout_constraintBottom_toTopOf="@+id/tabBar"
             android:onClick="openPlayback" android:padding="16dp"
-            android:id="@+id/playbackBar">
+            android:id="@+id/playbackBar" android:background="#F1F1F1">
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"

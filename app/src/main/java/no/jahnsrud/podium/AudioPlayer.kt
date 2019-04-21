@@ -25,6 +25,8 @@ object AudioPlayer : MediaPlayer() {
 
     }
 
+
+
     fun playFromUrl(url:String) {
         try {
             setDataSource(url)
