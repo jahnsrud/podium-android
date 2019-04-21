@@ -24,22 +24,24 @@ class SearchFragment : androidx.fragment.app.Fragment() {
         super.onStart()
 
         searchButton.setOnClickListener({
-            requestFeaturedPodcasts()
+            searchForPodcasts()
         })
+
+        requestFeaturedPodcasts()
 
     }
 
 
 
     fun requestFeaturedPodcasts() {
+        FeedParser().requestFeaturedPodcasts()
+
+    }
+
+    fun searchForPodcasts() {
 
         val search = searchTextField.text.toString()
-
-        val feedParser = FeedParser()
-        feedParser.requestFeaturedPodcasts(search)
-
-
-
+        FeedParser().searchPodcastDirectory(search)
     }
 
 

@@ -10,6 +10,8 @@ import android.view.MenuItem
 import android.view.View
 import androidx.transition.Visibility
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main.playPauseButton
+import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.navigation.TabManager
 
 
@@ -33,6 +35,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         if (savedInstanceState == null) {
             tabManager.currentController = tabManager.libraryTabController
         }
+
+        // TODO: Dynamic
+        updatePlaybackBar()
+
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -65,6 +71,24 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         val intent = Intent(this@MainActivity, PlaybackActivity::class.java)
         startActivity(intent)
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        // TODO: Dynamic
+        updatePlaybackBar()
+    }
+
+    fun updatePlaybackBar() {
+        episodeTextView.text = "Episode"
+        podcastTextView.text = "PODCAST"
+
+        if (AudioPlayer.isPlaying) {
+            playPauseButton.text = "❙❙"
+        } else {
+            playPauseButton.text = "▶"
+        }
     }
 
     fun playbackBarInteraction(view: View) {

@@ -9,8 +9,8 @@ import java.util.concurrent.Executors
 
 class FeedParser {
 
-    val FEATURED_URL:String = "https://itunes.apple.com/no/rss/toppodcasts/limit=50/explicit=true/json"
-    val SEARCH_ROOT_URL:String = "https://itunes.apple.com/search?entity=podcast&limit=80"
+    val FEATURED_URL = "https://itunes.apple.com/no/rss/toppodcasts/limit=50/explicit=true/json"
+    val SEARCH_ROOT_URL = "https://itunes.apple.com/search?entity=podcast&limit=80"
 
     fun requestFeaturedPodcasts() {
 
@@ -43,9 +43,25 @@ class FeedParser {
     }
 
     fun searchPodcastDirectory(search: String) {
-        val searchTerm = "&term=${search}"
-        val requestUrl = SEARCH_ROOT_URL + searchTerm
+
+        if (validateSearchTerm(search)) {
+
+            val searchTerm = "&term=${search}"
+            val requestUrl = SEARCH_ROOT_URL + searchTerm
+
+        } else {
+            print("Invalid search term")
+        }
+
 
     }
 
+    fun validateSearchTerm(search: String) : Boolean {
+
+        if (search.length > 0) {
+            return true;
+        }
+        return false;
+
+    }
 }

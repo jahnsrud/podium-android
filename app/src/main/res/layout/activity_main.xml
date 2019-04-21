@@ -58,14 +58,18 @@
                     android:layout_height="wrap_content" android:id="@+id/episodeTextView" android:textStyle="bold"
                     android:textColor="#000000" android:inputType="textCapCharacters"/>
             <TextView
-                    android:text="Podcast"
+                    android:text="PODCAST"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/podcastTextView"/>
+                    android:layout_height="wrap_content" android:id="@+id/podcastTextView" android:textSize="10sp"
+                    android:lineSpacingExtra="1.2dp" android:textStyle="bold"/>
         </LinearLayout>
         <Button
                 android:layout_width="40dp"
                 android:layout_height="wrap_content" android:id="@+id/playPauseButton"
-                android:text="*" android:onClick="playbackBarInteraction"/>
+                android:text="-" android:onClick="playbackBarInteraction" android:textSize="12sp"
+                style="@style/Widget.AppCompat.Button.Borderless" android:gravity="center_horizontal|center_vertical"
+                android:foregroundGravity="center_vertical|center_horizontal"
+                android:layout_gravity="center_horizontal|center_vertical"/>
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/tabBar"
