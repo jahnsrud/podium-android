@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/libraryFragment"
+        android:id="@+id/tab_library"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home"/>
 
     <item
-        android:id="@+id/searchFragment"
+        android:id="@+id/tab_search"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_search"/>
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/tab_settings"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_settings"/>
 
