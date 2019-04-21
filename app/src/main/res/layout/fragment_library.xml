@@ -4,8 +4,17 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".LibraryFragment">
-    <Button
-            android:text="Library"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+                android:text="Library"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/button"/>
+        <Button
+                android:text="OPEN_PODCAST_TEST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/podcastButton"/>
+    </LinearLayout>
 </FrameLayout>

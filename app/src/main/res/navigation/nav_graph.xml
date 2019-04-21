@@ -7,7 +7,11 @@
     <activity android:id="@+id/mainActivity" android:name="no.jahnsrud.podium.MainActivity"
               android:label="activity_main" tools:layout="@layout/activity_main"/>
     <fragment android:id="@+id/libraryFragment" android:name="no.jahnsrud.podium.LibraryFragment"
-              android:label="fragment_library" tools:layout="@layout/fragment_library"/>
+              android:label="fragment_library" tools:layout="@layout/fragment_library">
+        <action android:id="@+id/action_libraryFragment_to_podcastFragment" app:destination="@id/podcastFragment"/>
+    </fragment>
     <fragment android:id="@+id/searchFragment" android:name="no.jahnsrud.podium.SearchFragment"
               android:label="fragment_search" tools:layout="@layout/fragment_search"/>
+    <fragment android:id="@+id/podcastFragment" android:name="no.jahnsrud.podium.PodcastFragment"
+              android:label="fragment_podcast" tools:layout="@layout/fragment_podcast"/>
 </navigation>

@@ -17,7 +17,6 @@ class SearchFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
-    val FEATURED_URL:String = "https://itunes.apple.com/no/rss/toppodcasts/limit=50/explicit=true/json"
 
     override fun onStart() {
         super.onStart()
@@ -28,7 +27,7 @@ class SearchFragment : Fragment() {
     fun requestFeaturedPodcasts() {
 
         val feedParser = FeedParser()
-        feedParser.requestFeaturedPodcasts(FEATURED_URL)
+        feedParser.requestFeaturedPodcasts()
 
 
 

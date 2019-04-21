@@ -1,5 +1,6 @@
 package no.jahnsrud.podium
 
+import android.content.pm.ActivityInfo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,9 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         updateProgress()
 
         seekBar.setOnSeekBarChangeListener(this)
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
 
     }
 
