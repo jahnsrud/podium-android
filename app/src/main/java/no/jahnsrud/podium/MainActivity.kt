@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
                 loadFragment(LibraryFragment())
 
-
                 return@OnNavigationItemSelectedListener true
             }
             R.id.searchFragment -> {
@@ -61,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         if (fragment != null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, fragment!!)
+                .replace(R.id.mainFragment, fragment!!)
                 .commit()
             return true
         }

@@ -1,8 +1,8 @@
 package no.jahnsrud.podium
 
-import android.app.Fragment
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -38,16 +38,13 @@ class EpisodeListFragment : Fragment() {
         list_recycler_view.adapter = adapter
         list_recycler_view.layoutManager = LinearLayoutManager(ctx)
 
-        // TODO!
-
-        /*
         episodeViewModel = ViewModelProviders.of(this).get(EpisodeViewModel::class.java)
 
         episodeViewModel.allEpisodes.observe(this, Observer { episodes ->
             // Update the cached copy of the pods in the adapter.
             episodes?.let { adapter.setEpisodes(it) }
         })
-        */
+
     }
 
     override fun onResume() {

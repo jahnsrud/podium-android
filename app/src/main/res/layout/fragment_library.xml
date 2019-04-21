@@ -16,5 +16,9 @@
                 android:text="OPEN_PODCAST_TEST"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/podcastButton"/>
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:name="no.jahnsrud.podium.PodcastListFragment"
+                android:id="@+id/fragment"/>
     </LinearLayout>
 </FrameLayout>
