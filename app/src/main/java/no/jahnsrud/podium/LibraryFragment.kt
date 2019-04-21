@@ -21,9 +21,7 @@ class LibraryFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-
         podcastButton.setOnClickListener({
-
             openPodcast()
         })
 
