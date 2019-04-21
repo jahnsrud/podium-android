@@ -16,6 +16,13 @@ import android.view.View
 
 class MainActivity : AppCompatActivity() {
 
+    val fragment1: Fragment = LibraryFragment()
+    val fragment2: Fragment = SearchFragment()
+    val fragment3: Fragment = SettingsFragment()
+    val fm = supportFragmentManager
+    var active = fragment1
+
+
     @SuppressLint("ResourceType")
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -46,11 +53,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
 
     }
@@ -60,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         if (fragment != null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.mainFragment, fragment!!)
+                .replace(R.id.main_container, fragment!!)
                 .commit()
             return true
         }
