@@ -55,6 +55,12 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
             currentPodcast = Podcast("", "", "", "")
         }
 
+        if (AudioPlayer.isPlaying) {
+            playPauseButton.text = "❙❙"
+        } else {
+            playPauseButton.text = "▶"
+        }
+
         if (AudioPlayer.currentEpisode != null) {
             currentEpisode = AudioPlayer.currentEpisode
         } else {
@@ -70,8 +76,8 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     fun updateProgress() {
 
-        totalTimeText.text = "${AudioPlayer.duration/1000}"
         timePlayedText.text = "${AudioPlayer.currentPosition/1000}"
+        totalTimeText.text = "${AudioPlayer.duration/1000}"
 
 
     }
