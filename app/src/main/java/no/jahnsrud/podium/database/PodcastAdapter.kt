@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import no.jahnsrud.podium.models.Podcast
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.podcast_list_item.view.*
+import kotlinx.android.synthetic.main.list_item_podcast.view.*
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import no.jahnsrud.podium.R
@@ -28,7 +28,7 @@ class PodcastAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PodcastViewHolder {
-        val itemView = inflater.inflate(no.jahnsrud.podium.R.layout.podcast_list_item, parent, false)
+        val itemView = inflater.inflate(no.jahnsrud.podium.R.layout.list_item_podcast, parent, false)
 
         return PodcastViewHolder(itemView)
     }

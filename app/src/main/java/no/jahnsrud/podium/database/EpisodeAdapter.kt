@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import no.jahnsrud.podium.models.Podcast
 import androidx.core.content.ContextCompat.startActivity
 import android.content.Intent
-import kotlinx.android.synthetic.main.episode_list_item.view.*
+import kotlinx.android.synthetic.main.list_item_episode.view.*
 import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.PlaybackActivity
@@ -25,7 +25,7 @@ class EpisodeAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder {
-        val itemView = inflater.inflate(no.jahnsrud.podium.R.layout.episode_list_item, parent, false)
+        val itemView = inflater.inflate(no.jahnsrud.podium.R.layout.list_item_episode, parent, false)
         return EpisodeViewHolder(itemView)
 
     }

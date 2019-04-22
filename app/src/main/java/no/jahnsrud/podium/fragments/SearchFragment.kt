@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_search.*
 import no.jahnsrud.podium.FeedParser
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.database.PodcastAdapter
+import no.jahnsrud.podium.models.Podcast
 
 class SearchFragment : androidx.fragment.app.Fragment() {
 
@@ -28,9 +30,9 @@ class SearchFragment : androidx.fragment.app.Fragment() {
         })
 
         requestFeaturedPodcasts()
+        configureRecyclerView()
 
     }
-
 
 
     fun requestFeaturedPodcasts() {
@@ -41,6 +43,37 @@ class SearchFragment : androidx.fragment.app.Fragment() {
         featuredPodcasts.forEach {
             println("${it.title}")
         }
+
+    }
+
+    fun configureRecyclerView() {
+
+        val ctx = context ?: return
+
+        val adapter = PodcastAdapter(ctx)
+        adapter.setPodcasts(betaPodcasts())
+
+        podcastsRecyclerView.adapter = adapter
+        podcastsRecyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(ctx)
+
+        podcastsRecyclerView.addItemDecoration(
+            androidx.recyclerview.widget.DividerItemDecoration(
+                context!!,
+                androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+            )
+        )
+
+    }
+
+    fun betaPodcasts() : ArrayList<Podcast> {
+
+        return arrayListOf<Podcast>(
+            Podcast("ID1", "TITLE_1", "FEED_URL", "COVER_IMAGE", "DESCRIPTION"),
+            Podcast("ID2", "TITLE_2", "FEED_URL", "COVER_IMAGE", "DESCRIPTION"),
+            Podcast("ID3", "TITLE_3", "FEED_URL", "COVER_IMAGE", "DESCRIPTION"),
+            Podcast("ID4", "TITLE_4", "FEED_URL", "COVER_IMAGE", "DESCRIPTION"),
+            Podcast("ID5", "TITLE_5", "FEED_URL", "COVER_IMAGE", "DESCRIPTION")
+        )
 
     }
 
