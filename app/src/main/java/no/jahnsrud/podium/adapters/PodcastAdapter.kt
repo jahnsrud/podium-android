@@ -1,4 +1,4 @@
-package no.jahnsrud.podium.database
+package no.jahnsrud.podium.adapters
 
 import android.content.Context
 import android.view.LayoutInflater

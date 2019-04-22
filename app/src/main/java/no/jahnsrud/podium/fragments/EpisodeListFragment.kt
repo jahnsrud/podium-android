@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_podcast_list.*
-import no.jahnsrud.podium.database.EpisodeAdapter
+import no.jahnsrud.podium.adapters.EpisodeAdapter
 import no.jahnsrud.podium.database.EpisodeViewModel
 import no.jahnsrud.podium.R
 
