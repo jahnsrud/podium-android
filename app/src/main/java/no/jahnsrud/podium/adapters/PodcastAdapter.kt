@@ -48,7 +48,7 @@ class PodcastAdapter internal constructor(
         holder.itemView.setOnClickListener() {
 
             // TODO: ADD ARGS!
-            Navigation.findNavController(holder.itemView!!).navigate(R.id.action_libraryFragment_to_podcastFragment)
+            Navigation.findNavController(holder.itemView!!).navigate(R.id.podcastFragment)
         }
 
     }
