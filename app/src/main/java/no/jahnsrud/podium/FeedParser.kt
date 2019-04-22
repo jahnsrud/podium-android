@@ -3,7 +3,6 @@ package no.jahnsrud.podium
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import com.beust.klaxon.Klaxon
-import no.jahnsrud.podium.fragments.podcast
 import no.jahnsrud.podium.models.Podcast
 import java.io.StringReader
 import java.net.URL
@@ -57,7 +56,7 @@ class FeedParser {
                 val description = jsonObject.get("summary").toString()
                 print(description)
 
-                podcast = Podcast(trackId, realTitle.toString(), "NOT_ADDED", "IMAGE", description)
+                val podcast = Podcast(trackId, realTitle.toString(), "NOT_ADDED", "IMAGE", description)
 
                 println(podcast.toString())
 

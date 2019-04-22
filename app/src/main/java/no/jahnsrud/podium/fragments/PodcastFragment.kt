@@ -9,30 +9,31 @@ import kotlinx.android.synthetic.main.fragment_podcast.*
 import no.jahnsrud.podium.models.Podcast
 import no.jahnsrud.podium.R
 
-var podcast: Podcast? = null
 
 class PodcastFragment : androidx.fragment.app.Fragment() {
+
+    var podcast: Podcast? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+
         return inflater.inflate(R.layout.fragment_podcast, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
     }
 
     override fun onStart() {
         super.onStart()
 
-        /* if (this.intent.getSerializableExtra("podcast") != null) {
-            podcast = intent.getSerializableExtra("podcast") as? Podcast
-        } else {
-
-            //
-            this.podcast = Podcast("hey01", "MockPod™", "", "https://i.pinimg.com/originals/33/07/37/330737871eb6b5258ff38f4d441bfc1e.png")
-        }
-*/
-
+        this.podcast = arguments?.getSerializable("podcast") as Podcast?
 
         populateData()
     }

@@ -41,11 +41,16 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     }
 
+
+    // TODO: Check why this doesn't work anymore
+
+    /*
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
 
         tabManager.onSaveInstanceState(outState)
     }
+    */
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
