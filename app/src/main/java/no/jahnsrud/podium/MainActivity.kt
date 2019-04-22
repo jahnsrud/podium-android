@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
             playbackBar.visibility = View.VISIBLE
             episodeTextView.text = AudioPlayer.currentEpisode?.title ?: ""
-            podcastTextView.text = AudioPlayer.currentPodcast?.title ?: ""
+            podcastTextView.text = AudioPlayer.currentPodcast?.title ?: "PODCAST".toUpperCase()
 
             if (AudioPlayer.isPlaying) {
                 playPauseButton.text = "❙❙"
