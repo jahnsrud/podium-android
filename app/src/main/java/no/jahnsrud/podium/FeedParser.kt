@@ -3,6 +3,8 @@ package no.jahnsrud.podium
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import com.beust.klaxon.Klaxon
+import no.jahnsrud.podium.fragments.podcast
+import no.jahnsrud.podium.models.Podcast
 import java.io.StringReader
 import java.net.URL
 import java.util.concurrent.Executors
@@ -12,9 +14,11 @@ class FeedParser {
     val FEATURED_URL = "https://itunes.apple.com/no/rss/toppodcasts/limit=50/explicit=true/json"
     val SEARCH_ROOT_URL = "https://itunes.apple.com/search?entity=podcast&limit=80"
 
-    fun requestFeaturedPodcasts() {
+    fun requestFeaturedPodcasts() : ArrayList<Podcast> {
+
 
         print("Printing request...")
+        var allPodcasts = ArrayList<Podcast>()
         Executors.newSingleThreadExecutor().execute {
 
             val response = URL(FEATURED_URL).readText()
@@ -24,22 +28,29 @@ class FeedParser {
 
             val feed = json.obj("feed")
 
-            val allFeatures : JsonArray<JsonObject>? = feed?.get("entry") as JsonArray<JsonObject>?
+            val allFeatured : JsonArray<JsonObject>? = feed?.get("entry") as JsonArray<JsonObject>?
 
-            for((index,obj) in allFeatures?.withIndex()!!) {
-                // println("Loop Iteration $index on each object")
-                println(obj)
+            for((index,obj) in allFeatured?.withIndex()!!) {
+                println("${index}: ${obj}")
 
                 val title: JsonObject = obj.get("title") as JsonObject
                 val realTitle = title.get("label")
 
-                println(realTitle)
+                podcast = Podcast("ID_HERE", realTitle.toString(), "FEED_HERE", "COVER_HERE")
 
-                // println(obj.get("artist"))
+                println("Title: " + realTitle)
+                // println("Title: " + realTitle)
 
-                // val yourObj = Klaxon().parseFromJsonObject<Haltestelle>(obj)
+                println(podcast.toString())
+
+                allPodcasts.add(podcast!!)
+
+
             }
+
         }
+
+        return allPodcasts
     }
 
     fun searchPodcastDirectory(search: String) {
