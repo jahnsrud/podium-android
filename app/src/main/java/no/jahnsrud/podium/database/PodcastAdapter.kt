@@ -23,6 +23,7 @@ class PodcastAdapter internal constructor(
 
     inner class PodcastViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         val podcastItemView: TextView = itemView.findViewById(no.jahnsrud.podium.R.id.list_title)
+        val podcastDescriptionView: TextView = itemView.findViewById(no.jahnsrud.podium.R.id.list_description)
 
     }
 
@@ -36,6 +37,8 @@ class PodcastAdapter internal constructor(
         val current = podcasts[position]
 
         holder.podcastItemView.text = current.title
+        holder.podcastDescriptionView.text = current.id
+
         Glide.with(holder.itemView).load(current.coverImageUrl).apply {
             RequestOptions.bitmapTransform(RoundedCorners(14))
         } .into(holder.itemView.imageView)

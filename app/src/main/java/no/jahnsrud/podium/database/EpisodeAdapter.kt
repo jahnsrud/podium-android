@@ -37,7 +37,7 @@ class EpisodeAdapter internal constructor(
         holder.itemView.list_description.text = current.description
         holder.itemView.setOnClickListener() {
 
-            AudioPlayer.playFromEpisode(current, Podcast("", "", "", ""))
+            AudioPlayer.playFromEpisode(current, Podcast("", "", "", "", ""))
             val intent = Intent(holder.itemView.context, PlaybackActivity::class.java)
             startActivity(holder.itemView.context, intent, null)
 

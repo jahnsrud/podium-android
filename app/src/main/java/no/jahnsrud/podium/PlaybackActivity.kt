@@ -52,7 +52,7 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         if (AudioPlayer.currentPodcast != null) {
             currentPodcast = AudioPlayer.currentPodcast
         } else {
-            currentPodcast = Podcast("", "", "", "")
+            currentPodcast = Podcast("", "", "", "", "")
         }
 
         if (AudioPlayer.isPlaying) {

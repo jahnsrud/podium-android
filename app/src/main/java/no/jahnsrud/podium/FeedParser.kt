@@ -30,16 +30,34 @@ class FeedParser {
 
             val allFeatured : JsonArray<JsonObject>? = feed?.get("entry") as JsonArray<JsonObject>?
 
-            for((index,obj) in allFeatured?.withIndex()!!) {
-                println("${index}: ${obj}")
+            for((index,jsonObject) in allFeatured?.withIndex()!!) {
+                println("${index}: ${jsonObject}")
 
-                val title: JsonObject = obj.get("title") as JsonObject
+                // ID: Kommer her!
+                val ids:JsonObject = jsonObject.get("id") as JsonObject
+                val trackId:String = "0" // ids.get("id") as String
+
+
+                // Podcast Title
+                val title: JsonObject = jsonObject.get("title") as JsonObject
                 val realTitle = title.get("label")
 
-                podcast = Podcast("ID_HERE", realTitle.toString(), "FEED_HERE", "COVER_HERE")
-
                 println("Title: " + realTitle)
-                // println("Title: " + realTitle)
+
+                // Image
+
+                val itemImages = jsonObject.get("image")
+                // val image = itemImages.get(2) as String
+
+                // URL
+                // Ikke mulig å hente her...
+
+
+                // Description
+                val description = jsonObject.get("summary").toString()
+                print(description)
+
+                podcast = Podcast(trackId, realTitle.toString(), "NOT_ADDED", "IMAGE", description)
 
                 println(podcast.toString())
 
