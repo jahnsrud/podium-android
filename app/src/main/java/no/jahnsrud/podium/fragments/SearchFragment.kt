@@ -34,7 +34,13 @@ class SearchFragment : androidx.fragment.app.Fragment() {
 
 
     fun requestFeaturedPodcasts() {
-        FeedParser().requestFeaturedPodcasts()
+
+        val featuredPodcasts = FeedParser().requestFeaturedPodcasts()
+
+        println(" ---- Og svarene i SearchFragment er følgende:")
+        featuredPodcasts.forEach {
+            println("${it.title}")
+        }
 
     }
 

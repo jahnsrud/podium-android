@@ -81,18 +81,28 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     fun updatePlaybackBar() {
-        episodeTextView.text = "Episode"
-        podcastTextView.text = "PODCAST"
 
-        if (AudioPlayer.isPlaying) {
-            playPauseButton.text = "❙❙"
+        if (AudioPlayer.currentEpisode != null) {
+
+            playbackBar.visibility = View.VISIBLE
+            episodeTextView.text = AudioPlayer.currentEpisode?.title ?: ""
+            podcastTextView.text = AudioPlayer.currentPodcast?.title ?: ""
+
+            if (AudioPlayer.isPlaying) {
+                playPauseButton.text = "❙❙"
+            } else {
+                playPauseButton.text = "▶"
+            }
+
         } else {
-            playPauseButton.text = "▶"
+            playbackBar.visibility = View.GONE
+
         }
     }
 
     fun playbackBarInteraction(view: View) {
         Snackbar.make(view, "Coming soon!", Snackbar.LENGTH_LONG).show()
+        AudioPlayer.playPause()
     }
 
 
