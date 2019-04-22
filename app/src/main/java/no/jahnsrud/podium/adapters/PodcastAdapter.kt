@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import no.jahnsrud.podium.models.Podcast
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import kotlinx.android.synthetic.main.list_item_podcast.view.*
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
@@ -48,7 +49,16 @@ class PodcastAdapter internal constructor(
         holder.itemView.setOnClickListener() {
 
             // TODO: ADD ARGS!
-            Navigation.findNavController(holder.itemView!!).navigate(R.id.podcastFragment)
+
+            // TEST:
+
+
+            // findNavController(holder.itemView)
+               // .graph.addAll()
+
+
+            findNavController(holder.itemView)
+                .navigate(R.id.podcastFragment)
         }
 
     }

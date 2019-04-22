@@ -11,7 +11,9 @@
     <fragment android:id="@+id/searchFragment" android:name="no.jahnsrud.podium.fragments.SearchFragment"
               android:label="fragment_search" tools:layout="@layout/fragment_search"/>
     <fragment android:id="@+id/podcastFragment" android:name="no.jahnsrud.podium.fragments.PodcastFragment"
-              android:label="fragment_podcast" tools:layout="@layout/fragment_podcast"/>
+              android:label="fragment_podcast" tools:layout="@layout/fragment_podcast">
+        <argument android:name="podcast" app:argType="no.jahnsrud.podium.models.Podcast"/>
+    </fragment>
 
     <fragment android:id="@+id/settingsFragment" android:name="no.jahnsrud.podium.fragments.SettingsFragment"
               android:label="fragment_settings" tools:layout="@layout/fragment_settings"/>
