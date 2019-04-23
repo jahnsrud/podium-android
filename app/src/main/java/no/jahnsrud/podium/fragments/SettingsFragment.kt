@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_settings.*
 import no.jahnsrud.podium.LoginActivity
-import no.jahnsrud.podium.PlaybackActivity
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.UserHelper
 
 class SettingsFragment : androidx.fragment.app.Fragment() {
 
@@ -24,11 +24,26 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
     override fun onStart() {
         super.onStart()
 
-        loginButton.setOnClickListener({
-            val intent = Intent(activity, LoginActivity::class.java)
-            startActivity(intent)
+        settings_openLoginButton.setOnClickListener({
+           openLogin()
         })
 
+        updateStatus()
+
+    }
+
+    private fun updateStatus() {
+        if (UserHelper().isLoggedIn()) {
+            settings_openLoginButton.text = "LOGGED IN!"
+        } else {
+            settings_openLoginButton.text = "NOT LOGGED IN"
+        }
+
+    }
+
+    private fun openLogin() {
+        val intent = Intent(activity, LoginActivity::class.java)
+        startActivity(intent)
     }
 
 

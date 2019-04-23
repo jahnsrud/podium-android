@@ -114,6 +114,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a731a21f-b3ca-4e4c-8ca0-f26510e53b34" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/UserHelper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_user_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -125,9 +127,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LoginFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LoginFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/RegisterFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/RegisterFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,38 +157,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="374">
+              <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/MainActivity.kt">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
-              <folding>
-                <element signature="e#28#615#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="15" column="94" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -209,29 +198,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
           <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LoginFragment.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LoginFragment.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="13" selection-start-line="19" selection-end-line="20" />
+              <folding>
+                <element signature="e#38#561#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_user_login.xml">
           <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="34" column="97" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/RegisterFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state relative-caret-position="249">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/UserHelper.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -243,12 +258,13 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>glide.w</find>
       <find>coverimage</find>
       <find>transaction</find>
       <find>begintra</find>
@@ -261,7 +277,6 @@
       <find>didsel&lt;</find>
       <find>playbackfragment</find>
       <find>this.fi</find>
-      <find>snackbar</find>
       <find>og svarene</find>
       <find>visibil</find>
       <find>colorPrimary</find>
@@ -277,7 +292,9 @@
       <find>.navigate</find>
       <find>navcontrol</find>
       <find>intent</find>
+      <find>snackbar</find>
       <find>drawer</find>
+      <find>supportFragmentManager</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/src/main/res/anim</dir>
@@ -289,9 +306,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/PodcastFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/MainFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/PodcastListFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_app.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/AppActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
@@ -333,13 +347,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/adapters/PodcastAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/RegisterFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_user_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LoginFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/RegisterFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/UserHelper.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt" />
       </list>
     </option>
   </component>
@@ -860,7 +877,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556008403489</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Some work on Login">
+      <created>1556009300333</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1556009300333</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -876,14 +900,14 @@
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" weight="0.32967034" />
-      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.33178654" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.33178654" />
       <window_info anchor="bottom" id="Logcat" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32946634" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.501221" side_tool="true" weight="0.32830626" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4993895" weight="0.31438515" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4993895" visible="true" weight="0.31322506" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32946634" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.329849" />
@@ -900,7 +924,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="HUGE improvements. More soon, just have to commit before trying something cool " />
     <MESSAGE value="Converted to AndroidX!" />
     <MESSAGE value="AND THERE WE GO! A fully functioning tab bar navigation system " />
     <MESSAGE value="Bug fixes and cleanup" />
@@ -925,17 +948,10 @@
     <MESSAGE value="Initial work on passing data from fragment to fragment using Navigation" />
     <MESSAGE value="Passing of data: ✅ – of course" />
     <MESSAGE value="Added some resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some resources" />
+    <MESSAGE value="Some work on Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some work on Login" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodiumRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/Fragments/PlaybackFragment.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_notifications_black_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1196,14 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_library.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -1212,25 +1220,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/RegisterFragment.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="354">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+          <folding>
+            <element signature="e#28#615#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,24 +1238,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
-          <folding>
-            <element signature="e#28#615#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_library.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
       <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="94" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_user_login.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="34" column="97" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="97" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LoginFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        <state relative-caret-position="285">
+          <caret line="19" column="13" selection-start-line="19" selection-end-line="20" />
+          <folding>
+            <element signature="e#38#561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/RegisterFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/UserHelper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>

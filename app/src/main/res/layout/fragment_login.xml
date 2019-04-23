@@ -3,7 +3,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".fragments.LoginFragment">
+             tools:context=".fragments.LoginFragment" android:background="#FFFFFF">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -22,13 +22,13 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:ems="10"
-                    android:id="@+id/editText"/>
+                    android:id="@+id/emailField" android:hint="Email"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:ems="10"
-                    android:id="@+id/editText2"/>
+                    android:id="@+id/passwordField" android:hint="Password"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
@@ -37,15 +37,15 @@
             <Button
                     android:text="Login"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button3"/>
+                    android:layout_height="wrap_content" android:id="@+id/login_loginButton"/>
             <Button
                     android:text="New? Register"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/button7"/>
+                    android:layout_height="wrap_content" android:id="@+id/login_registerButton"/>
             <Button
                     android:text="@android:string/cancel"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/cancelButton"/>
+                    android:layout_height="wrap_content" android:id="@+id/login_cancelButton"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

@@ -121,7 +121,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     fun playbackBarInteraction(view: View) {
-        Snackbar.make(view, "Coming soon!", Snackbar.LENGTH_LONG).show()
         AudioPlayer.playPause()
     }
 

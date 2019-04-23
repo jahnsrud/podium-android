@@ -10,7 +10,7 @@
     <fragment
             android:layout_width="0dp"
             android:layout_height="0dp" android:name="no.jahnsrud.podium.fragments.LoginFragment"
-            android:id="@+id/fragment3"
+            android:id="@+id/userLoginFragment"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
