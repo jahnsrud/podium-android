@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_podcast_list.*
+import kotlinx.android.synthetic.main.fragment_search.*
 import no.jahnsrud.podium.adapters.EpisodeAdapter
 import no.jahnsrud.podium.database.EpisodeViewModel
 import no.jahnsrud.podium.R
@@ -42,6 +43,13 @@ class EpisodeListFragment : androidx.fragment.app.Fragment() {
             // Update the cached copy of the pods in the adapter.
             episodes?.let { adapter.setEpisodes(it) }
         })
+
+        list_recycler_view.addItemDecoration(
+            androidx.recyclerview.widget.DividerItemDecoration(
+                context!!,
+                androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
+            )
+        )
 
     }
 
