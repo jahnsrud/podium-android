@@ -71,6 +71,7 @@ class LoginFragment : Fragment() {
 
                     if (task.isSuccessful) {
                         print("Logged in!")
+                        closeLogin()
                     } else {
                         print("Logged in!")
                     }

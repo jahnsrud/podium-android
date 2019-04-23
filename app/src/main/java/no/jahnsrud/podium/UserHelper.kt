@@ -1,12 +1,16 @@
 package no.jahnsrud.podium
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+
+
 
 class UserHelper {
 
     fun isLoggedIn() : Boolean {
         var mAuth = FirebaseAuth.getInstance();
-        if (mAuth != null) {
+        if (mAuth.currentUser != null) {
+
             return true
         }
 

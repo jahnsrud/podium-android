@@ -32,6 +32,12 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        updateStatus()
+    }
+
     private fun updateStatus() {
         if (UserHelper().isLoggedIn()) {
             settings_openLoginButton.text = "LOGGED IN!"

@@ -1,5 +1,6 @@
 package no.jahnsrud.podium.fragments
 
+import android.app.Activity
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
@@ -7,11 +8,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_register.*
+import kotlinx.android.synthetic.main.fragment_register.emailField
+import kotlinx.android.synthetic.main.fragment_register.passwordField
 
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.UserHelper
 
 class RegisterFragment : Fragment() {
+
+    var mAuth = FirebaseAuth.getInstance();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +60,24 @@ class RegisterFragment : Fragment() {
     }
 
     fun register() {
+        val email:String = emailField.text.toString()
+        val password:String = passwordField.text.toString()
 
+        if (UserHelper().isInputValid (email, password)) {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(context as Activity, OnCompleteListener<AuthResult> { task ->
+
+                if (task.isSuccessful) {
+                    print("Logged in!")
+                    closeLogin()
+
+                } else {
+                    print("Logged in!")
+                }
+
+            })
+
+
+        }
     }
 
     fun openLogin() {

@@ -9,4 +9,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        getSupportActionBar()?.hide();
+
+    }
 }
