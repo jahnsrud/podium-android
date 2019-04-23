@@ -40,7 +40,7 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
 
     private fun updateStatus() {
         if (UserHelper().isLoggedIn()) {
-            settings_openLoginButton.text = "LOGGED IN!"
+            settings_openLoginButton.text = "${UserHelper().getLoggedInEmail()}"
         } else {
             settings_openLoginButton.text = "NOT LOGGED IN"
         }

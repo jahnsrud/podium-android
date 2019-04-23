@@ -18,6 +18,16 @@ class UserHelper {
 
     }
 
+    fun getLoggedInEmail() : String {
+        var mAuth = FirebaseAuth.getInstance();
+        if (mAuth.currentUser != null) {
+
+            return mAuth.currentUser!!.email.toString()
+        }
+
+        return ""
+    }
+
     fun isInputValid(email: String, password:String) : Boolean {
 
         if (email.length == 0 || password.length == 0) {
