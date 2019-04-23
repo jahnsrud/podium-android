@@ -8,6 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.transition.Visibility
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.playPauseButton
@@ -30,11 +36,20 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setContentView(R.layout.activity_main)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
+
         tabBar.setOnNavigationItemSelectedListener(this)
 
         if (savedInstanceState == null) {
             tabManager.currentController = tabManager.libraryTabController
         }
+
+        // tabBar.setupWithNavController(findNavController(R.id.tabBar))
+
+        /* val navController = findNavController(R.id.libraryFragment)
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        findViewById<Toolbar>(R.id.toolbar).setupWithNavController(navController, appBarConfiguration)
+
+        setSupportActionBar(toolbar) */
 
         // TODO: Dynamic
         updatePlaybackBar()

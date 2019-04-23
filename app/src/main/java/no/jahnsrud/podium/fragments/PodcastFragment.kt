@@ -18,16 +18,7 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
-
         return inflater.inflate(R.layout.fragment_podcast, container, false)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onStart() {
@@ -43,7 +34,20 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
         titleTextView.setText(podcast?.title)
         Glide.with(coverImageView).load(podcast?.coverImageUrl).into(coverImageView)
 
+        if (isSubscribed()) {
 
+        } else {
+
+        }
+
+
+    }
+
+    fun isSubscribed() : Boolean {
+
+        // TODO: Implement
+
+        return true;
     }
 
 }

@@ -47,10 +47,9 @@ class PodcastAdapter internal constructor(
         } .into(holder.itemView.imageView)
 
 
+        // Pass the podcast to the receiving Fragment
 
         holder.itemView.setOnClickListener() {
-
-            // TODO: ADD ARGS!
 
             val args = bundleOf(
                 "podcast" to current

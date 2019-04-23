@@ -13,6 +13,12 @@
     <fragment android:id="@+id/podcastFragment" android:name="no.jahnsrud.podium.fragments.PodcastFragment"
               android:label="fragment_podcast" tools:layout="@layout/fragment_podcast">
         <argument android:name="podcast" app:argType="no.jahnsrud.podium.models.Podcast"/>
+        <action
+                android:id="@+id/podcastAction"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/fade_out" />
     </fragment>
 
     <fragment android:id="@+id/settingsFragment" android:name="no.jahnsrud.podium.fragments.SettingsFragment"
