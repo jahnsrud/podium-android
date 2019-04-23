@@ -40,4 +40,9 @@ class UserHelper {
 
     }
 
+    fun signOut() {
+        var mAuth = FirebaseAuth.getInstance();
+        mAuth.signOut()
+    }
+
 }

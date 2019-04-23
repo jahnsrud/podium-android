@@ -42,14 +42,24 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
         if (UserHelper().isLoggedIn()) {
             settings_openLoginButton.text = "${UserHelper().getLoggedInEmail()}"
         } else {
-            settings_openLoginButton.text = "NOT LOGGED IN"
+            settings_openLoginButton.text = "Login"
         }
 
     }
 
     private fun openLogin() {
-        val intent = Intent(activity, LoginActivity::class.java)
-        startActivity(intent)
+
+        if (UserHelper().isLoggedIn()) {
+
+            val intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
+
+        } else {
+
+            // TODO: Improve by asking for user confirmation
+            UserHelper().signOut()
+            updateStatus()
+        }
     }
 
 
