@@ -39,21 +39,22 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         tabBar.setOnNavigationItemSelectedListener(this)
 
+
         if (savedInstanceState == null) {
             tabManager.currentController = tabManager.libraryTabController
         }
 
-        // tabBar.setupWithNavController(findNavController(R.id.tabBar))
-
-        /* val navController = findNavController(R.id.libraryFragment)
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-        findViewById<Toolbar>(R.id.toolbar).setupWithNavController(navController, appBarConfiguration)
-
-        setSupportActionBar(toolbar) */
+        configureNavController()
 
         // TODO: Dynamic
         updatePlaybackBar()
 
+    }
+
+    fun configureNavController() {
+        val navController = findNavController(R.id.libraryTab)
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
 
