@@ -14,8 +14,11 @@ interface EpisodeDao {
     @Query("SELECT * FROM episodes ORDER BY title ASC")
     fun getAllEpisodes(): LiveData<List<Episode>>
 
+
+    /*
     @Query("SELECT * FROM episodes WHERE podcast")
     fun getAllEpisodesFromPodcast(): LiveData<List<Episode>>
+    */
 
     @Insert
     fun insert(episode: Episode)

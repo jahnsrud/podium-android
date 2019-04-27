@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.wear:wear:1.0.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85195b2549bf7556ec0eed6dfb555d39/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/862f4258422b517c294185f30020de6c/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85195b2549bf7556ec0eed6dfb555d39/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/85195b2549bf7556ec0eed6dfb555d39/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/862f4258422b517c294185f30020de6c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/862f4258422b517c294185f30020de6c/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

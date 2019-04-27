@@ -13,11 +13,12 @@ class FeedParser {
     val FEATURED_URL = "https://itunes.apple.com/no/rss/toppodcasts/limit=50/explicit=true/json"
     val SEARCH_ROOT_URL = "https://itunes.apple.com/search?entity=podcast&limit=80"
 
-    fun requestFeaturedPodcasts() : ArrayList<Podcast> {
 
+    fun requestFeaturedPodcasts(callBack: (ArrayList<Podcast>) -> Unit)  {
 
         print("Printing request...")
         var allPodcasts = ArrayList<Podcast>()
+
         Executors.newSingleThreadExecutor().execute {
 
             val response = URL(FEATURED_URL).readText()
@@ -65,9 +66,10 @@ class FeedParser {
 
             }
 
+            callBack(allPodcasts)
+
         }
 
-        return allPodcasts
     }
 
     fun searchPodcastDirectory(search: String) {

@@ -9,8 +9,8 @@ open class Episode (
     @PrimaryKey var id:String,
     @ColumnInfo(name = "title") var title:String,
     @ColumnInfo(name = "description") var description:String,
-    @ColumnInfo(name = "streamURL") var streamURL:String,
-    @ColumnInfo(name = "podcast") var podcast:Podcast
+    @ColumnInfo(name = "streamURL") var streamURL:String
+    // @ColumnInfo(name = "podcast") var podcast:Podcast
 
 
 /*

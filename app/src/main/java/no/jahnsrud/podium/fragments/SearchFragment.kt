@@ -38,12 +38,7 @@ class SearchFragment : androidx.fragment.app.Fragment() {
 
     fun requestFeaturedPodcasts() {
 
-        val featuredPodcasts = FeedParser().requestFeaturedPodcasts()
 
-        println(" ---- Og svarene i SearchFragment er følgende:")
-        featuredPodcasts.forEach {
-            println("${it.title}")
-        }
 
     }
 
@@ -64,6 +59,19 @@ class SearchFragment : androidx.fragment.app.Fragment() {
             )
         )
 
+        FeedParser().requestFeaturedPodcasts {
+            println(" ---- Og svarene i SearchFragment er følgende:")
+            it.forEach {
+                println("TEST");
+                println("${it.title}")
+            }
+
+            this.activity?.runOnUiThread(Runnable {
+                adapter.setPodcasts(it)
+            })
+
+
+        }
     }
 
     fun betaPodcasts() : ArrayList<Podcast> {
