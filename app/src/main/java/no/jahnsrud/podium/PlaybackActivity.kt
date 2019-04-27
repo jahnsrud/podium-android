@@ -8,7 +8,6 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.SeekBar
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.models.Podcast
@@ -67,7 +66,7 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         if (AudioPlayer.currentEpisode != null) {
             currentEpisode = AudioPlayer.currentEpisode
         } else {
-            // this.finish()
+            this.finish()
         }
 
 
@@ -82,10 +81,30 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     fun updateProgress() {
 
-        timePlayedText.text = "${AudioPlayer.currentPosition/1000}"
-        totalTimeText.text = "${AudioPlayer.duration/1000}"
+        timePlayedText.text = "${formatTime(AudioPlayer.currentPosition)}"
+        totalTimeText.text = "${formatTime(AudioPlayer.duration)}"
 
 
+    }
+
+    // Inspired by this code by Joseph Earl
+    // https://stackoverflow.com/questions/5548922/how-do-i-correctly-display-the-position-duration-of-a-mediaplayer
+
+    private fun formatTime(ms: Int): String {
+        val buf = StringBuffer()
+
+        val hours = (ms / (1000 * 60 * 60)).toInt()
+        val minutes = (ms % (1000 * 60 * 60) / (1000 * 60)).toInt()
+        val seconds = (ms % (1000 * 60 * 60) % (1000 * 60) / 1000).toInt()
+
+        buf
+            .append(String.format("%02d", hours))
+            .append(":")
+            .append(String.format("%02d", minutes))
+            .append(":")
+            .append(String.format("%02d", seconds))
+
+        return buf.toString()
     }
 
     fun playPause(view: View) {
