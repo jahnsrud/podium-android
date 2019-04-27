@@ -31,35 +31,7 @@ class FeedParser {
             val allFeatured : JsonArray<JsonObject>? = feed?.get("entry") as JsonArray<JsonObject>?
 
             for((index,jsonObject) in allFeatured?.withIndex()!!) {
-                println("${index}: ${jsonObject}")
-
-                // ID: Kommer her!
-                val ids:JsonObject = jsonObject.get("id") as JsonObject
-                val trackId:String = "0" // ids.get("id") as String
-
-
-                // Podcast Title
-                val title: JsonObject = jsonObject.get("title") as JsonObject
-                val realTitle = title.get("label")
-
-                println("Title: " + realTitle)
-
-                // Image
-
-                val itemImages = jsonObject.get("image")
-                // val image = itemImages.get(2) as String
-
-                // URL
-                // Ikke mulig å hente her...
-
-
-                // Description
-                val description = jsonObject.get("summary").toString()
-                print(description)
-
-                val podcast = Podcast(trackId, realTitle.toString(), "NOT_ADDED", "IMAGE", description)
-
-                println(podcast.toString())
+                val podcast = parsePodcast(index, jsonObject)
 
                 allPodcasts.add(podcast!!)
 
@@ -70,6 +42,47 @@ class FeedParser {
 
         }
 
+    }
+
+    private fun parsePodcast(index: Int, jsonObject: JsonObject): Podcast {
+        println("${index}: ${jsonObject}")
+
+        // ID: Kommer her!
+        val ids: JsonObject = jsonObject.get("id") as JsonObject
+        val trackId: String = "0" // ids.get("id") as String
+
+
+        // Podcast Title
+        val title: JsonObject = jsonObject.get("title") as JsonObject
+        val realTitle = title.get("label")
+
+        println("Title: " + realTitle)
+
+        // Image
+
+        var imageLink = ""
+
+        val imageArray = jsonObject.get("im:image") as JsonArray<*>
+        println("Image ---")
+        val podcastImageArray = imageArray.get("label") as JsonArray<*>
+        println("Houston, this is our podcastImageArray:" + podcastImageArray)
+        imageLink = podcastImageArray.get(2).toString()
+        println("Houston, this is our actual image:")
+        println(imageLink)
+
+
+        // URL
+        // Ikke mulig å hente her...
+
+
+        // Description
+        val description = jsonObject.get("summary").toString()
+        print(description)
+
+        val podcast = Podcast(trackId, realTitle.toString(), "NOT_ADDED", imageLink, description)
+
+        println(podcast.toString())
+        return podcast
     }
 
     fun searchPodcastDirectory(search: String) {

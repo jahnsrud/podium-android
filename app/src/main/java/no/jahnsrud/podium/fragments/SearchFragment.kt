@@ -60,7 +60,7 @@ class SearchFragment : androidx.fragment.app.Fragment() {
         )
 
         FeedParser().requestFeaturedPodcasts {
-            println(" ---- Og svarene i SearchFragment er følgende:")
+            println(" ----  SearchFragment er følgende:")
             it.forEach {
                 println("TEST");
                 println("${it.title}")
