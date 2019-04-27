@@ -1,5 +1,6 @@
 package no.jahnsrud.podium.fragments
 
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_podcast.*
 import no.jahnsrud.podium.models.Podcast
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.database.PodcastDao
+import no.jahnsrud.podium.database.PodcastViewModel
 
 
 class PodcastFragment : androidx.fragment.app.Fragment() {
@@ -31,14 +34,30 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
         this.podcast = arguments?.getSerializable("podcast") as Podcast?
 
 
-
-
         populateData()
     }
 
     fun actionButtonPressed() {
 
+        // TODO: Fix
+        if (isSubscribed()) {
+
+        } else {
+
+        }
+
+        subscribe()
+
     }
+
+    fun subscribe() {
+        val model = PodcastViewModel(application = Application())
+        this.podcast?.let { model.insert(it) }
+
+
+    }
+
+
 
 
     fun populateData() {
