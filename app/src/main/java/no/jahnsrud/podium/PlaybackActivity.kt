@@ -70,7 +70,9 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         titleText.text = currentEpisode?.title
         subtitleText.text = currentPodcast?.title
-        Glide.with(this).load(currentPodcast?.coverImageUrl).into(coverImageView)
+        Glide.with(this).load(currentPodcast?.coverImageUrl)
+            .placeholder(R.drawable.placeholder_cover)
+            .into(coverImageView)
 
     }
 

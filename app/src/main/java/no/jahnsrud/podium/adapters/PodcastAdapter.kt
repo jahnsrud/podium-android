@@ -42,7 +42,10 @@ class PodcastAdapter internal constructor(
         holder.podcastItemView.text = current.title
         holder.podcastDescriptionView.text = current.publisher
 
-        Glide.with(holder.itemView).load(current.coverImageUrl).apply {
+        Glide.with(holder.itemView).
+            load(current.coverImageUrl)
+            .placeholder(R.drawable.placeholder_cover)
+            .apply {
             RequestOptions.bitmapTransform(RoundedCorners(14))
         } .into(holder.itemView.imageView)
 

@@ -43,7 +43,9 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
 
     fun populateData() {
         titleTextView.setText(podcast?.title)
-        Glide.with(coverImageView).load(podcast?.coverImageUrl).into(coverImageView)
+        Glide.with(coverImageView).load(podcast?.coverImageUrl)
+            .placeholder(R.drawable.placeholder_cover)
+            .into(coverImageView)
 
         if (isSubscribed()) {
             actionButton.text = "Play"
