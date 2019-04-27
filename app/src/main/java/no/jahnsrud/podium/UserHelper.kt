@@ -1,9 +1,6 @@
 package no.jahnsrud.podium
 
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-
-
 
 class UserHelper {
 

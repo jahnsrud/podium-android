@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.SeekBar
@@ -23,7 +24,9 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         setContentView(R.layout.activity_playback)
 
         getSupportActionBar()?.hide();
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         updatePodcast()
         updateProgress()
@@ -66,12 +69,18 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         if (AudioPlayer.currentEpisode != null) {
             currentEpisode = AudioPlayer.currentEpisode
         } else {
-            this.finish()
+            // this.finish()
         }
 
 
         titleText.text = currentEpisode?.title
-        subtitleText.text = currentPodcast?.title
+
+        if (currentPodcast?.title?.length!! > 0) {
+            subtitleText.text = currentPodcast?.title!!.toUpperCase()
+        } else {
+            subtitleText.text = "NOW PLAYING"
+        }
+
         Glide.with(this)
             .load(currentPodcast?.coverImageUrl)
             .placeholder(R.drawable.placeholder_cover)

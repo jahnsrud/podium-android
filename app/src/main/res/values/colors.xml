@@ -6,6 +6,7 @@
     <color name="colorPrimaryDark">#CFCFCF</color>
     <color name="colorAccent">@color/podiumBlue</color>
     <color name="black">#000000</color>
+    <color name="playbackBackground">#2B2B2B</color>
 
 </resources>
 

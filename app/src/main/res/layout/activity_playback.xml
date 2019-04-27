@@ -5,14 +5,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PlaybackActivity" android:orientation="vertical">
+        tools:context=".PlaybackActivity" android:orientation="vertical" android:background="@color/playbackBackground">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:gravity="center">
         <ImageView
-                android:layout_width="250dp"
-                android:id="@+id/coverImageView" android:layout_height="250dp"
+                android:layout_width="240dp"
+                android:id="@+id/coverImageView" android:layout_height="240dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="centerInside" app:srcCompat="@drawable/placeholder_cover"
                 android:layout_marginBottom="24dp"/>
@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:id="@+id/seekBar"
-            />
+                    android:progressTint="#FFFFFF"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -43,7 +43,8 @@
                     android:layout_height="match_parent"
                     android:id="@+id/timePlayedText"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginTop="4dp" android:layout_weight="1" android:textSize="12sp"/>
+                    android:layout_marginTop="4dp" android:layout_weight="1" android:textSize="12sp"
+                    android:textColor="#FFFFFF"/>
             <TextView
                     android:text="0:00"
                     android:layout_width="wrap_content"
@@ -51,7 +52,7 @@
                     android:id="@+id/totalTimeText"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="4dp" android:layout_weight="1" android:textAlignment="textEnd"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" android:textColor="#FFFFFF"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -65,41 +66,46 @@
                 android:layout_height="40dp"
                 android:id="@+id/seekForwardButton"
                 android:onClick="seekForward"
-                android:src="@drawable/icon_backward" android:background="#00FFFFFF" android:scaleType="centerInside"/>
+                android:src="@drawable/icon_backward" android:background="#00FFFFFF" android:scaleType="centerInside"
+                android:tint="#FFFFFF"/>
         <ImageButton
                 android:layout_width="74dp"
                 android:layout_height="70dp"
                 android:id="@+id/playPauseButton"
                 android:onClick="playPause"
                 android:background="#00FFFFFF" android:src="@drawable/icon_play" android:scaleType="centerInside"
-                android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+                android:layout_marginLeft="30dp" android:layout_marginRight="30dp" android:tint="#FFFFFF"/>
         <ImageButton
                 android:text="- 10"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/seekBackButton"
                 android:onClick="seekBackward"
-                android:background="#00FFFFFF" android:src="@drawable/icon_forward" android:scaleType="centerInside"/>
+                android:background="#00FFFFFF" android:src="@drawable/icon_forward" android:scaleType="centerInside"
+                android:tint="#FFFFFF"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/linearLayout2">
+            android:id="@+id/linearLayout2"
+            android:layout_marginLeft="32dp" android:layout_marginRight="32dp"
+            android:padding="16dp" android:layout_marginTop="12dp"
+            android:background="@drawable/playback_metadata_background_rounded">
         <TextView
                 android:text="Episode"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="31dp"
                 android:id="@+id/titleText" android:textAlignment="center"
                 android:textStyle="bold"
-                android:textSize="20sp" android:textColor="@color/colorBlack"
-                android:layout_marginTop="12dp"/>
+                android:textSize="20sp" android:textColor="#FFFFFF"
+        />
         <TextView
-                android:text="Podcast"
-                android:layout_width="300dp"
+                android:text="PODCAST"
+                android:layout_width="match_parent"
                 android:layout_height="22dp"
                 android:id="@+id/subtitleText" android:textAlignment="center"
-                android:textStyle="bold"/>
+                android:textStyle="bold" android:textColor="#D8D8D8" android:lineSpacingExtra="1.2dp"/>
     </LinearLayout>
 </LinearLayout>
