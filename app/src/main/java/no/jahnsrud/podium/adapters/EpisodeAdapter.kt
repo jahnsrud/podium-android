@@ -34,6 +34,7 @@ class EpisodeAdapter internal constructor(
         val current = episodes[position]
 
         holder.itemView.list_title.text = current.title
+        holder.itemView.list_date.text = current.datePublished
         holder.itemView.list_description.text = current.description
         holder.itemView.setOnClickListener() {
 
