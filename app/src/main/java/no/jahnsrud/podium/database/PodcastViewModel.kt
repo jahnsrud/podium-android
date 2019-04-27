@@ -36,5 +36,9 @@ class PodcastViewModel(application: Application) : AndroidViewModel(application)
         repository.insert(podcast)
     }
 
+    fun delete(podcast: Podcast) = scope.launch(Dispatchers.IO) {
+        repository.insert(podcast)
+    }
+
 
 }

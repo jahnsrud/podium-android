@@ -14,12 +14,14 @@ import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.R
 import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.models.Podcast
+import android.os.Handler
 
 class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     var currentPodcast: Podcast? = null
     var currentEpisode: Episode? = null
 
+    private val mHandler: Handler? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,27 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         seekBar.setOnSeekBarChangeListener(this)
 
+        this.runOnUiThread(object : Runnable {
+
+            override fun run() {
+                if (AudioPlayer != null) {
+                    updatePodcast()
+                }
+                if (mHandler != null) {
+                    mHandler.postDelayed(this, 1000)
+                }
+            }
+        })
+
     }
+
+    /*
+    public override fun onDestroy() {
+
+        mHandler.removeCallbacks(run)
+        super.onDestroy()
+
+    }*/
 
     // SeekBar implementation
     override fun onStopTrackingTouch(seekBar: SeekBar?) {
@@ -43,9 +65,8 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-        if (seekBar != null) {
-            AudioPlayer.seekTo(progress)
-        }
+        AudioPlayer.seekTo(progress);
+        seekBar?.setProgress(progress);
 
         updateProgress()
     }
@@ -83,10 +104,15 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
             subtitleText.text = "NOW PLAYING"
         }
 
+        val total = AudioPlayer.duration
+        seekBar.setMax(total)
+
         Glide.with(this)
             .load(currentPodcast?.coverImageUrl)
             .placeholder(R.drawable.placeholder_cover)
             .into(coverImageView)
+
+        updateProgress()
 
     }
 
@@ -128,11 +154,13 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
     fun seekBackward(view: View) {
         AudioPlayer.seekBackward()
         seekBackButton.startAnimation(bounceAnimation())
+        updateProgress()
     }
 
     fun seekForward(view: View) {
         AudioPlayer.seekForward()
         seekForwardButton.startAnimation(bounceAnimation())
+        updateProgress()
 
     }
 

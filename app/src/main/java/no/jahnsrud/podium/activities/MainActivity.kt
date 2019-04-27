@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             tabManager.currentController = tabManager.libraryTabController
         }
 
-        configureNavController()
+        // configureNavController()
 
         // TODO: Dynamic
         updatePlaybackBar()
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         mSensorListener!!.setOnShakeListener(object : ShakeEventListener.OnShakeListener {
 
             override fun onShake() {
-                Toast.makeText(this@MainActivity, "Shake!", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this@MainActivity, "Shake!", Toast.LENGTH_SHORT).show()
             }
         })
 

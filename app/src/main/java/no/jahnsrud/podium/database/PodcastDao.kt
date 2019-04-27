@@ -2,6 +2,7 @@ package no.jahnsrud.podium.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import no.jahnsrud.podium.models.Podcast
@@ -15,6 +16,9 @@ interface PodcastDao {
 
     @Insert
     fun insert(podcast: Podcast)
+
+    @Delete
+    fun delete(podcast: Podcast)
 
     @Query("SELECT COUNT(*) from podcasts")
     fun usersCount() : List<Int>

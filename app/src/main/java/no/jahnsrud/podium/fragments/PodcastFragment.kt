@@ -43,10 +43,20 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
         if (isSubscribed()) {
 
         } else {
-
         }
 
         subscribe()
+
+
+
+    }
+
+    fun delete() {
+
+        /*
+        val model = PodcastViewModel(application = Application())
+        this.podcast?.let { model.delete(it) }
+        */
 
     }
 

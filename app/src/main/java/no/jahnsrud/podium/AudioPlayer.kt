@@ -50,12 +50,19 @@ object AudioPlayer : MediaPlayer() {
 
     }
 
+    val SEEK_VALUE = 15000
+
     fun seekBackward() {
+        var pos = this.currentPosition
+        pos -= SEEK_VALUE
+        this.seekTo(pos)
 
     }
 
     fun seekForward() {
-
+        var pos = this.currentPosition
+        pos += SEEK_VALUE
+        this.seekTo(pos)
     }
 
 

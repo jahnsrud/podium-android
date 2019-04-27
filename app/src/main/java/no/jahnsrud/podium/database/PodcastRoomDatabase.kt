@@ -55,8 +55,9 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
             }
 
             fun populateDatabase(podcastDao: PodcastDao) {
-                podcastDao.deleteAll()
+                // podcastDao.deleteAll()
 
+                /*
                 val p1 = Podcast("RR", "Radioresepsjonen", "https://podkast.nrk.no/program/radioresepsjonen.rss","https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w", "", "NRK")
                 val p2 = Podcast("SR", "Serial", "","https://www.creativelive.com/blog/wp-content/uploads/2014/12/seriallogo.png", "", "This American Life")
                 val p3 = Podcast("Material", "Material", "","https://relayfm.s3.amazonaws.com/uploads/broadcast/image_3x/19/material_artwork.png", "", "Relay FM")
@@ -69,6 +70,7 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
                 podcastDao.insert(p4)
                 podcastDao.insert(p5)
 
+                */
 
 
             }
