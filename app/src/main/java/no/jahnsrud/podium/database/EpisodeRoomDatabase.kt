@@ -58,7 +58,7 @@ abstract class EpisodeRoomDatabase : RoomDatabase() {
             fun populateDatabase(episodeDao: EpisodeDao) {
                 episodeDao.deleteAll()
 
-                val p1 = Podcast("RR", "Radioresepsjonen", "","https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w", "")
+                val p1 = Podcast("RR", "Radioresepsjonen", "","https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w", "", "PUBLISHER")
 
 
                 episodeDao.insert(Episode("ep1", "23. april-episoden", "Fun, fun", "https://nl.nrk.no/podkast/aps/10908/radioresepsjonen_2018-12-17_1255_3633.MP3"))

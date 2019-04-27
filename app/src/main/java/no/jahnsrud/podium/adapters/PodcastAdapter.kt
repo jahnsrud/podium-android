@@ -40,7 +40,7 @@ class PodcastAdapter internal constructor(
         val current = podcasts[position]
 
         holder.podcastItemView.text = current.title
-        holder.podcastDescriptionView.text = current.id
+        holder.podcastDescriptionView.text = current.publisher
 
         Glide.with(holder.itemView).load(current.coverImageUrl).apply {
             RequestOptions.bitmapTransform(RoundedCorners(14))

@@ -57,11 +57,11 @@ abstract class PodcastRoomDatabase : RoomDatabase() {
             fun populateDatabase(podcastDao: PodcastDao) {
                 podcastDao.deleteAll()
 
-                val p1 = Podcast("RR", "Radioresepsjonen", "","https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w", "")
-                val p2 = Podcast("SR", "Serial", "","https://www.creativelive.com/blog/wp-content/uploads/2014/12/seriallogo.png", "")
-                val p3 = Podcast("Material", "Material", "","https://relayfm.s3.amazonaws.com/uploads/broadcast/image_3x/19/material_artwork.png", "")
-                val p4 = Podcast("MPU", "Mac Power Users", "","https://relayfm.s3.amazonaws.com/uploads/broadcast/image_3x/16/mpu_artwork.png", "")
-                val p5 = Podcast("99Invisible", "99% Invisible", "","https://f.prxu.org/96/images/a52a20dd-7b8e-46be-86a0-dda86b0953fc/99-300.png", "")
+                val p1 = Podcast("RR", "Radioresepsjonen", "https://podkast.nrk.no/program/radioresepsjonen.rss","https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w", "", "NRK")
+                val p2 = Podcast("SR", "Serial", "","https://www.creativelive.com/blog/wp-content/uploads/2014/12/seriallogo.png", "", "This American Life")
+                val p3 = Podcast("Material", "Material", "","https://relayfm.s3.amazonaws.com/uploads/broadcast/image_3x/19/material_artwork.png", "", "Relay FM")
+                val p4 = Podcast("MPU", "Mac Power Users", "","https://relayfm.s3.amazonaws.com/uploads/broadcast/image_3x/16/mpu_artwork.png", "", "Relay FM")
+                val p5 = Podcast("99Invisible", "99% Invisible", "","https://f.prxu.org/96/images/a52a20dd-7b8e-46be-86a0-dda86b0953fc/99-300.png", "", "Roman Mars")
 
                 podcastDao.insert(p1)
                 podcastDao.insert(p2)

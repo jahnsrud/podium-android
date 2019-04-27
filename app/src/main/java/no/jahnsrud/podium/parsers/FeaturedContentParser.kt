@@ -1,4 +1,4 @@
-package no.jahnsrud.podium
+package no.jahnsrud.podium.parsers
 
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
@@ -8,7 +8,7 @@ import java.io.StringReader
 import java.net.URL
 import java.util.concurrent.Executors
 
-class FeedParser {
+class FeaturedContentParser {
 
     val FEATURED_URL = "https://itunes.apple.com/no/rss/toppodcasts/limit=50/explicit=true/json"
     val SEARCH_ROOT_URL = "https://itunes.apple.com/search?entity=podcast&limit=80"
@@ -47,7 +47,8 @@ class FeedParser {
     private fun parsePodcast(index: Int, jsonObject: JsonObject): Podcast {
         println("${index}: ${jsonObject}")
 
-        // ID: Kommer her!
+        // ID:
+        // TODO: Fix
         val ids: JsonObject = jsonObject.get("id") as JsonObject
         val trackId: String = "0" // ids.get("id") as String
 
@@ -74,12 +75,17 @@ class FeedParser {
         // URL
         // Ikke mulig å hente her...
 
+        // Publisher
+        var publisher = ""
+
+        val publisherObject: JsonObject = jsonObject.get("im:artist") as JsonObject
+        publisher = publisherObject.get("label").toString()
 
         // Description
         val description = jsonObject.get("summary").toString()
         print(description)
 
-        val podcast = Podcast(trackId, realTitle.toString(), "NOT_ADDED", imageLink, description)
+        val podcast = Podcast(trackId, realTitle.toString(), "NOT_ADDED", imageLink, description, publisher)
 
         println(podcast.toString())
         return podcast

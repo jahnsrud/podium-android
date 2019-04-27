@@ -11,12 +11,18 @@ open class Podcast (
     @ColumnInfo(name = "title") var title:String,
     @ColumnInfo(name = "feedUrl") var feedUrl:String,
     @ColumnInfo(name = "coverImageUrl") var coverImageUrl:String,
-    @ColumnInfo(name = "description") var description:String
+    @ColumnInfo(name = "description") var description:String,
+    @ColumnInfo(name = "publisher") var publisher:String
 
 
 ) : Serializable {
     override fun toString(): String {
-        return "Podcast(id='$id', title='$title', feedUrl='$feedUrl', coverImageUrl='$coverImageUrl', description='$description')"
+        return "Podcast(id='$id', " +
+                "title='$title', " +
+                "feedUrl='$feedUrl', " +
+                "coverImageUrl='$coverImageUrl', " +
+                "publisher='$publisher', " +
+                "description='$description')"
     }
 }
 
