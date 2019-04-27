@@ -1,4 +1,4 @@
-package no.jahnsrud.podium
+package no.jahnsrud.podium.logic
 
 import com.google.firebase.auth.FirebaseAuth
 

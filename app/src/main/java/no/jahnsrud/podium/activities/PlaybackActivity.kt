@@ -1,4 +1,4 @@
-package no.jahnsrud.podium
+package no.jahnsrud.podium.activities
 
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils
 import android.widget.SeekBar
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_playback.*
+import no.jahnsrud.podium.AudioPlayer
+import no.jahnsrud.podium.R
 import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.models.Podcast
 

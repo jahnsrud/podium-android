@@ -11,8 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.activity_login.*
-import no.jahnsrud.podium.UserHelper
+import no.jahnsrud.podium.logic.UserHelper
 
 
 class LoginFragment : Fragment() {

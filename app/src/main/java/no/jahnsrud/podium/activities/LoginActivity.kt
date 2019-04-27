@@ -1,7 +1,8 @@
-package no.jahnsrud.podium
+package no.jahnsrud.podium.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import no.jahnsrud.podium.R
 
 class LoginActivity : AppCompatActivity() {
 

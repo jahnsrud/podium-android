@@ -10,7 +10,7 @@ import android.content.Intent
 import kotlinx.android.synthetic.main.list_item_episode.view.*
 import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.models.Episode
-import no.jahnsrud.podium.PlaybackActivity
+import no.jahnsrud.podium.activities.PlaybackActivity
 
 
 class EpisodeAdapter internal constructor(

@@ -7,7 +7,7 @@ import androidx.core.view.isInvisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
-import no.jahnsrud.podium.MainActivity
+import no.jahnsrud.podium.activities.MainActivity
 import no.jahnsrud.podium.R
 
 class TabManager(private val mainActivity: MainActivity) {

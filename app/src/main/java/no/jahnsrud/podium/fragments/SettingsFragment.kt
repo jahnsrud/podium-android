@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_settings.*
-import no.jahnsrud.podium.LoginActivity
+import no.jahnsrud.podium.activities.LoginActivity
 import no.jahnsrud.podium.R
-import no.jahnsrud.podium.UserHelper
+import no.jahnsrud.podium.logic.UserHelper
 
 class SettingsFragment : androidx.fragment.app.Fragment() {
 

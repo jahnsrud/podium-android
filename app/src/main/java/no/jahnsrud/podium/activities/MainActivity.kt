@@ -1,4 +1,4 @@
-package no.jahnsrud.podium
+package no.jahnsrud.podium.activities
 
 import android.content.Context
 import android.content.Intent
@@ -9,29 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.transition.Visibility
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.playPauseButton
-import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.navigation.TabManager
 import android.hardware.SensorManager
 import android.widget.Toast
-import android.content.Context.SENSOR_SERVICE
 import android.hardware.Sensor
-import androidx.core.content.ContextCompat.getSystemService
-import android.hardware.Sensor.TYPE_ACCELEROMETER
-
-
-
-
-
-
+import no.jahnsrud.podium.AudioPlayer
+import no.jahnsrud.podium.R
+import no.jahnsrud.podium.logic.ShakeEventListener
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
