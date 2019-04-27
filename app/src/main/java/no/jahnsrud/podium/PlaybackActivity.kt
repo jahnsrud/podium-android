@@ -56,9 +56,9 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         }
 
         if (AudioPlayer.isPlaying) {
-            playPauseButton.text = "❙❙"
+            playPauseButton.setImageResource(R.drawable.icon_pause)
         } else {
-            playPauseButton.text = "▶"
+            playPauseButton.setImageResource(R.drawable.icon_play)
         }
 
         if (AudioPlayer.currentEpisode != null) {

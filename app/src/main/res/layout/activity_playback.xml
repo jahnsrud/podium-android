@@ -47,27 +47,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-        <Button
+        <ImageButton
                 android:text="+ 10"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/seekForwardButton"
                 android:onClick="seekForward"
-        />
-        <Button
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:src="@drawable/icon_backward" android:background="#00FFFFFF" android:scaleType="centerInside"/>
+        <ImageButton
+                android:layout_width="74dp"
+                android:layout_height="74dp"
                 android:id="@+id/playPauseButton"
                 android:onClick="playPause"
-                style="@style/Widget.AppCompat.Button.Colored" android:textSize="15sp"
-                android:textColor="#FFFFFF"/>
-        <Button
+                android:background="#00FFFFFF" android:src="@drawable/icon_play" android:scaleType="centerInside"
+                android:layout_marginLeft="30dp" android:layout_marginRight="30dp"/>
+        <ImageButton
                 android:text="- 10"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/seekBackButton"
                 android:onClick="seekBackward"
-        />
+                android:background="#00FFFFFF" android:src="@drawable/icon_forward" android:scaleType="centerInside"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="vertical"
