@@ -4,6 +4,8 @@ import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.SeekBar
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -88,15 +90,25 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     fun playPause(view: View) {
         AudioPlayer.playPause()
+        playPauseButton.startAnimation(bounceAnimation())
+        updatePodcast()
 
     }
 
     fun seekBackward(view: View) {
         AudioPlayer.seekBackward()
+        seekBackButton.startAnimation(bounceAnimation())
     }
 
     fun seekForward(view: View) {
         AudioPlayer.seekForward()
+        seekForwardButton.startAnimation(bounceAnimation())
+
+    }
+
+    fun bounceAnimation() : Animation {
+        return AnimationUtils.loadAnimation(this, R.anim.bounce_animation) as Animation
+
     }
 
 
