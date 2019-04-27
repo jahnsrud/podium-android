@@ -91,12 +91,42 @@ class FeaturedContentParser {
         return podcast
     }
 
-    fun searchPodcastDirectory(search: String) {
+    //     fun requestFeaturedPodcasts(callBack: (ArrayList<Podcast>) -> Unit)  {
 
+    fun searchPodcastDirectory(search: String, callBack: (ArrayList<Podcast>) -> Unit) {
         if (validateSearchTerm(search)) {
 
             val searchTerm = "&term=${search}"
             val requestUrl = SEARCH_ROOT_URL + searchTerm
+
+
+            print("Printing request...")
+            var searchResults = ArrayList<Podcast>()
+
+            Executors.newSingleThreadExecutor().execute {
+
+                val response = URL(requestUrl).readText()
+
+                val klaxon = Klaxon()
+                val json = klaxon.parseJsonObject(StringReader("$response"))
+
+                val feed = json.obj("results")
+
+                val allFeatured : JsonArray<JsonObject>? = feed?.get("entry") as JsonArray<JsonObject>?
+
+                for((index,jsonObject) in allFeatured?.withIndex()!!) {
+                    val podcast = parsePodcast(index, jsonObject)
+
+                    searchResults.add(podcast!!)
+
+
+                }
+
+                callBack(searchResults)
+
+            }
+
+
 
         } else {
             print("Invalid search term")

@@ -3,11 +3,13 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".fragments.RegisterFragment" android:background="#FFFFFF">
+             tools:context=".fragments.RegisterFragment" android:background="@drawable/background_register">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" android:padding="32dp"
+            android:background="@drawable/rounded_background" android:layout_margin="30dp" android:gravity="center"
+            android:foregroundGravity="center_vertical|center" android:layout_gravity="center">
         <TextView
                 android:text="Register"
                 android:layout_width="match_parent"
@@ -24,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/passwordField" android:hint="Password"/>
+                android:id="@+id/passwordField" android:hint="Password" android:layout_marginBottom="16dp"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -32,15 +34,20 @@
             <Button
                     android:text="Register"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/register_registerButton"/>
+                    android:layout_height="wrap_content" android:id="@+id/register_registerButton"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:background="@drawable/playback_metadata_background_rounded" android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp"/>
             <Button
-                    android:text="Already registered? Login"
+                    android:text="Already registered?"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/register_openLoginButton"/>
+                    android:layout_height="wrap_content" android:id="@+id/register_openLoginButton"
+                    android:background="@drawable/rounded_background" android:layout_marginBottom="10dp"/>
             <Button
                     android:text="@android:string/cancel"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/register_cancelButton"/>
+                    android:layout_height="wrap_content" android:id="@+id/register_cancelButton"
+                    android:background="@drawable/rounded_background"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

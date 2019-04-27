@@ -17,7 +17,6 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
@@ -49,8 +48,7 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
 
     private fun openLogin() {
 
-        if (UserHelper().isLoggedIn()) {
-
+        if (!UserHelper().isLoggedIn()) {
             val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)
 

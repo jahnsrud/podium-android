@@ -13,6 +13,8 @@ import no.jahnsrud.podium.adapters.PodcastAdapter
 
 class SearchFragment : androidx.fragment.app.Fragment() {
 
+    var adapter: PodcastAdapter? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,23 +31,17 @@ class SearchFragment : androidx.fragment.app.Fragment() {
             searchForPodcasts()
         })
 
-        requestFeaturedPodcasts()
         configureRecyclerView()
+        requestFeaturedPodcasts()
 
     }
 
-
-    fun requestFeaturedPodcasts() {
-
-
-
-    }
 
     fun configureRecyclerView() {
 
         val ctx = context ?: return
 
-        val adapter = PodcastAdapter(ctx)
+        adapter = PodcastAdapter(ctx)
 
         podcastsRecyclerView.adapter = adapter
         podcastsRecyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(ctx) as RecyclerView.LayoutManager?
@@ -57,6 +53,11 @@ class SearchFragment : androidx.fragment.app.Fragment() {
             )
         )
 
+
+    }
+
+    fun requestFeaturedPodcasts() {
+
         FeaturedContentParser().requestFeaturedPodcasts {
             println(" ----  SearchFragment er følgende:")
             it.forEach {
@@ -65,17 +66,28 @@ class SearchFragment : androidx.fragment.app.Fragment() {
             }
 
             this.activity?.runOnUiThread(Runnable {
-                adapter.setPodcasts(it)
+                adapter?.setPodcasts(it)
             })
 
 
         }
+
     }
+
 
     fun searchForPodcasts() {
 
         val search = searchTextField.text.toString()
-        FeaturedContentParser().searchPodcastDirectory(search)
+
+
+        FeaturedContentParser().searchPodcastDirectory(search) {
+            print("Received: " + it)
+
+            this.activity?.runOnUiThread(Runnable {
+                adapter?.setPodcasts(it)
+            })
+
+        }
     }
 
 

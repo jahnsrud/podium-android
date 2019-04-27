@@ -3,11 +3,15 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".fragments.LoginFragment" android:background="#FFFFFF">
+             tools:context=".fragments.LoginFragment"
+             android:background="@drawable/background_login">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content" android:padding="32dp"
+            android:background="@drawable/rounded_background_colored" android:gravity="center"
+            android:foregroundGravity="center_vertical|center"
+            android:layout_gravity="center_horizontal|center_vertical" android:layout_margin="30dp">
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -37,15 +41,20 @@
             <Button
                     android:text="Login"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/login_loginButton"/>
+                    android:layout_height="wrap_content" android:id="@+id/login_loginButton"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:background="@drawable/playback_metadata_background_rounded" android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp"/>
             <Button
                     android:text="New? Register"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/login_registerButton"/>
+                    android:layout_height="wrap_content" android:id="@+id/login_registerButton"
+                    android:layout_marginBottom="8dp" android:background="@drawable/rounded_background"/>
             <Button
                     android:text="@android:string/cancel"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/login_cancelButton"/>
+                    android:layout_height="wrap_content" android:id="@+id/login_cancelButton"
+                    android:background="@drawable/rounded_background"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

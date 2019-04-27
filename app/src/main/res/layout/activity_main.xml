@@ -51,17 +51,18 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/linearLayout"
                 android:background="#00A8A8A8" android:gravity="center_horizontal|center_vertical"
-                android:layout_weight="2">
+                android:layout_weight="2" android:onClick="openPlayback">
             <TextView
                     android:text="Episode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/episodeTextView" android:textStyle="bold"
-                    android:textColor="#000000" android:inputType="textCapCharacters"/>
+                    android:textColor="#000000" android:inputType="textCapCharacters" android:onClick="openPlayback"/>
             <TextView
                     android:text="PODCAST"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/podcastTextView" android:textSize="10sp"
-                    android:lineSpacingExtra="1.2dp" android:textStyle="bold" android:inputType="textNoSuggestions"/>
+                    android:lineSpacingExtra="1.2dp" android:textStyle="bold" android:inputType="textNoSuggestions"
+                    android:onClick="openPlayback"/>
         </LinearLayout>
         <Button
                 android:layout_width="40dp"
