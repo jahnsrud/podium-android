@@ -16,6 +16,9 @@ interface PodcastDao {
     @Insert
     fun insert(podcast: Podcast)
 
+    @Query("SELECT COUNT(*) from podcasts")
+    fun usersCount() : List<Int>
+
     @Query("DELETE FROM podcasts")
     fun deleteAll()
 

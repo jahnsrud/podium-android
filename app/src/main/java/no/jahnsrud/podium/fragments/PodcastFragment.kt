@@ -24,9 +24,20 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
     override fun onStart() {
         super.onStart()
 
+        actionButton.setOnClickListener({
+            actionButtonPressed()
+        })
+
         this.podcast = arguments?.getSerializable("podcast") as Podcast?
 
+
+
+
         populateData()
+    }
+
+    fun actionButtonPressed() {
+
     }
 
 
@@ -35,8 +46,9 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
         Glide.with(coverImageView).load(podcast?.coverImageUrl).into(coverImageView)
 
         if (isSubscribed()) {
-
+            actionButton.text = "Play"
         } else {
+            actionButton.text = "+ Subscribe"
 
         }
 

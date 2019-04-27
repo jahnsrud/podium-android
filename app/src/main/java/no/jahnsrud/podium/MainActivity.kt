@@ -1,5 +1,6 @@
 package no.jahnsrud.podium
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -19,6 +20,18 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.playPauseButton
 import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.navigation.TabManager
+import android.hardware.SensorManager
+import android.widget.Toast
+import android.content.Context.SENSOR_SERVICE
+import android.hardware.Sensor
+import androidx.core.content.ContextCompat.getSystemService
+import android.hardware.Sensor.TYPE_ACCELEROMETER
+
+
+
+
+
+
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
@@ -30,6 +43,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
      */
 
     private val tabManager: TabManager by lazy { TabManager(this) }
+
+    private var mSensorManager: SensorManager? = null
+    private var mSensorListener: ShakeEventListener? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +66,21 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         // TODO: Dynamic
         updatePlaybackBar()
 
+        mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        mSensorListener = ShakeEventListener()
+
+        mSensorListener!!.setOnShakeListener(object : ShakeEventListener.OnShakeListener {
+
+            override fun onShake() {
+                Toast.makeText(this@MainActivity, "Shake!", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+    }
+
+    override fun onPause() {
+        mSensorManager?.unregisterListener(mSensorListener)
+        super.onPause()
     }
 
     fun configureNavController() {
@@ -99,6 +131,12 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         // TODO: Dynamic
         updatePlaybackBar()
+
+        mSensorManager?.registerListener(
+            mSensorListener,
+            mSensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+            SensorManager.SENSOR_DELAY_UI
+        )
     }
 
     fun updatePlaybackBar() {
