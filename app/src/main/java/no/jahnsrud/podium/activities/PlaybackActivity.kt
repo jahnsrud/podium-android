@@ -15,6 +15,8 @@ import no.jahnsrud.podium.R
 import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.models.Podcast
 import android.os.Handler
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 
 class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
@@ -109,6 +111,7 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         Glide.with(this)
             .load(currentPodcast?.coverImageUrl)
+            .apply(RequestOptions.bitmapTransform(RoundedCorners(20)))
             .placeholder(R.drawable.placeholder_cover)
             .into(coverImageView)
 

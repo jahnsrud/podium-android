@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.fragment_podcast.*
 import kotlinx.coroutines.CoroutineScope
 import no.jahnsrud.podium.models.Podcast
@@ -85,7 +87,9 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
 
     fun populateData() {
         titleTextView.setText(podcast?.title)
-        Glide.with(coverImageView).load(podcast?.coverImageUrl)
+        Glide.with(coverImageView)
+            .load(podcast?.coverImageUrl)
+            .apply(RequestOptions.bitmapTransform(RoundedCorners(14)))
             .placeholder(R.drawable.placeholder_cover)
             .into(coverImageView)
 
@@ -102,10 +106,6 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
             var contains = false
 
             podcasts.forEach({
-
-                println("Key 1: " + it.title)
-                println("Key 2: " + this.podcast!!.title)
-
 
                 this.activity?.runOnUiThread(Runnable {
 

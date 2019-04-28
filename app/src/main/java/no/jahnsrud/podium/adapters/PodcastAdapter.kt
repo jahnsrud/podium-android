@@ -46,9 +46,9 @@ class PodcastAdapter internal constructor(
 
         Glide.with(holder.itemView).
             load(current.coverImageUrl)
+            .apply(RequestOptions.bitmapTransform(RoundedCorners(14)))
             .placeholder(R.drawable.placeholder_cover)
             .apply {
-            RequestOptions.bitmapTransform(RoundedCorners(14))
         } .into(holder.itemView.imageView)
 
 
