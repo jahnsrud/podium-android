@@ -19,6 +19,7 @@ class EpisodeAdapter internal constructor(
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var episodes = emptyList<Episode>() // Cached copy of pods
+    var podcast = Podcast("", "", "", "", "", "")
 
     inner class EpisodeViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
@@ -38,7 +39,7 @@ class EpisodeAdapter internal constructor(
         holder.itemView.list_description.text = current.description
         holder.itemView.setOnClickListener() {
 
-            AudioPlayer.playFromEpisode(current, Podcast("", "", "", "", "", ""))
+            AudioPlayer.playFromEpisode(current, podcast)
             val intent = Intent(holder.itemView.context, PlaybackActivity::class.java)
             startActivity(holder.itemView.context, intent, null)
 
@@ -51,6 +52,10 @@ class EpisodeAdapter internal constructor(
         this.episodes = episodes
         notifyDataSetChanged()
     }
+
+    /* fun setPodcast(podcast: Podcast) {
+        this.podcast = podcast
+    } */
 
     override fun getItemCount() = episodes.size
 }
