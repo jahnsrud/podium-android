@@ -20,13 +20,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:paddingLeft="16dp"
-            android:text="00/00"/>
+            android:text="00/00" android:textSize="12dp" android:textColor="#868686" android:letterSpacing="0.1"/>
     <TextView
             android:id="@+id/list_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:paddingLeft="16dp"
-            android:text="Description"/>
+            android:text="Description" android:layout_marginTop="8dp" android:textColor="#161616"
+            android:paddingRight="16dp"/>
 
 </LinearLayout>

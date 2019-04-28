@@ -71,20 +71,7 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
     }
 
     fun actionButtonPressed() {
-
-        // TODO: FIX!
         subscribe()
-
-
-
-    }
-
-    fun delete() {
-
-        /*
-        val model = PodcastViewModel(application = Application())
-        this.podcast?.let { model.delete(it) }
-        */
 
     }
 
@@ -112,17 +99,40 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
         podcastViewModel = ViewModelProviders.of(this).get(PodcastViewModel::class.java)
         podcastViewModel.allPodcasts.observe(this, Observer { podcasts ->
 
+            var contains = false
+
             podcasts.forEach({
-                if (it.feedUrl.equals(this.podcast!!.feedUrl)) {
-                    actionButton.text = "▶ Play"
-                } else {
-                    actionButton.text = "+ Subscribe"
-                }
+
+                println("Key 1: " + it.title)
+                println("Key 2: " + this.podcast!!.title)
+
+
+                this.activity?.runOnUiThread(Runnable {
+
+                    if (it.title.equals(this.podcast!!.title)) {
+                        contains = true
+                    } else {
+                    }
+                })
+
+
             })
 
-
+            updateUI(contains)
 
         })
+
+    }
+
+    fun updateUI(isSubscribed:Boolean) {
+
+        if (isSubscribed) {
+
+            actionButton.visibility = View.GONE
+        } else {
+            actionButton.visibility = View.VISIBLE
+        }
+
 
     }
 
