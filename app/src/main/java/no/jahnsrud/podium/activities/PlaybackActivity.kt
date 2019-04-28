@@ -16,15 +16,19 @@ import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.models.Podcast
 import android.os.Handler
 import android.view.GestureDetector
+import androidx.core.os.postDelayed
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import java.util.*
 
 class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     var currentPodcast: Podcast? = null
     var currentEpisode: Episode? = null
 
-    private val mHandler: Handler? = null
+    private lateinit var timer: Timer
+    private val noDelay = 0L
+    private val everySecond = 1000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,27 +44,37 @@ class PlaybackActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         seekBar.setOnSeekBarChangeListener(this)
 
-        this.runOnUiThread(object : Runnable {
+    }
 
+    override fun onResume() {
+        super.onResume()
+
+        val timerTask = object : TimerTask() {
             override fun run() {
-                if (AudioPlayer != null) {
+                runOnUiThread {
                     updatePodcast()
-                }
-                if (mHandler != null) {
-                    mHandler.postDelayed(this, 1000)
-                }
+                } }
             }
-        })
+
+
+        timer = Timer()
+        timer.schedule(timerTask, noDelay, everySecond)
 
     }
 
-    /*
+    override fun onPause() {
+        super.onPause()
+
+        timer.cancel()
+        timer.purge()
+    }
+
     public override fun onDestroy() {
 
-        mHandler.removeCallbacks(run)
         super.onDestroy()
 
-    }*/
+    }
+
 
     // SeekBar implementation
     override fun onStopTrackingTouch(seekBar: SeekBar?) {
