@@ -1,5 +1,6 @@
 package no.jahnsrud.podium.activities
 
+import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
@@ -17,9 +18,14 @@ import no.jahnsrud.podium.navigation.TabManager
 import android.hardware.SensorManager
 import android.widget.Toast
 import android.hardware.Sensor
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_playback.*
 import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.Settings
+import no.jahnsrud.podium.database.PodcastViewModel
 import no.jahnsrud.podium.logic.ShakeEventListener
+import no.jahnsrud.podium.models.Podcast
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener  {
@@ -44,10 +50,11 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         tabBar.setOnNavigationItemSelectedListener(this)
 
-
         if (savedInstanceState == null) {
             tabManager.currentController = tabManager.libraryTabController
         }
+
+        checkFirstLaunch()
 
         // configureNavController()
 
@@ -64,6 +71,54 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             }
         })
 
+
+    }
+
+    fun checkFirstLaunch() {
+
+        Settings.init(this)
+
+        if (Settings.isFirstLaunch()) {
+
+            println("First Launch: Welcome!")
+            println("First Launch: Adding recommended podcasts...")
+
+            prepopulatePodcasts()
+
+            Settings.setFirstLaunchFinished()
+
+            Snackbar.make(libraryTabContainer,
+                "Welcome to Podium 🎉 I've added some great podcasts to help you get started",
+                Snackbar.LENGTH_LONG)
+                .setAction("Got it!", View.OnClickListener() {
+
+                })
+                .show()
+
+
+        } else {
+            println("Not first launch. Welcome back!")
+        }
+
+    }
+
+    fun prepopulatePodcasts() {
+        val p1 = Podcast("RR", "Radioresepsjonen", "https://podkast.nrk.no/program/radioresepsjonen.rss","https://gfx.nrk.no/YUaJcOsN9qEw0OXxXzIIxQxpievY45Eh9bi8iIzYBT8w", "", "NRK")
+        val p2 = Podcast("SR", "Serial", "","https://www.creativelive.com/blog/wp-content/uploads/2014/12/seriallogo.png", "", "This American Life")
+        val p3 = Podcast("Material", "Material", "","https://relayfm.s3.amazonaws.com/uploads/broadcast/image_3x/19/material_artwork.png", "", "Relay FM")
+        val p4 = Podcast("MPU", "Mac Power Users", "","https://relayfm.s3.amazonaws.com/uploads/broadcast/image_3x/16/mpu_artwork.png", "", "Relay FM")
+        val p5 = Podcast("99Invisible", "99% Invisible", "","https://f.prxu.org/96/images/a52a20dd-7b8e-46be-86a0-dda86b0953fc/99-300.png", "", "Roman Mars")
+        val p6 = Podcast("ReplyAll", "ReplyAll", "","https://wi-images.condecdn.net/image/Z4wwonZD3Qg/crop/900/f/reply.png", "", "Gimlet")
+        val p7 = Podcast("PlanetMoney", "Planey Money", "","https://media.npr.org/assets/img/2018/08/02/npr_planetmoney_podcasttile_sq-7b7fab0b52fd72826936c3dbe51cff94889797a0-s700-c85.jpg", "", "NPR")
+
+        val model = PodcastViewModel(application)
+        model.insert(p1)
+        model.insert(p2)
+        model.insert(p3)
+        model.insert(p4)
+        model.insert(p5)
+        model.insert(p6)
+        model.insert(p7)
     }
 
     override fun onPause() {
@@ -142,9 +197,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
 
             if (AudioPlayer.isPlaying) {
-                playPauseButton.text = "❙❙"
+                playPauseButton.setImageResource(R.drawable.icon_pause_mini)
             } else {
-                playPauseButton.text = "▶"
+                playPauseButton.setImageResource(R.drawable.icon_play_mini)
             }
 
         } else {
@@ -155,6 +210,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     fun playbackBarInteraction(view: View) {
         AudioPlayer.playPause()
+        updatePlaybackBar()
     }
 
 

@@ -92,15 +92,15 @@
                 <Button
                         android:text="Downloads"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/settingsButton1" android:enabled="false"/>
+                        android:layout_height="wrap_content" android:id="@+id/settingsButton1"/>
                 <Button
                         android:text="Playback: Stream"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/settingsButton2" android:enabled="false"/>
+                        android:layout_height="wrap_content" android:id="@+id/settingsButton2"/>
                 <Button
                         android:text="Sorting"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/settingsButton3" android:enabled="false"/>
+                        android:layout_height="wrap_content" android:id="@+id/settingsButton3"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -64,13 +64,15 @@
                     android:lineSpacingExtra="1.2dp" android:textStyle="bold" android:inputType="textNoSuggestions"
                     android:onClick="openPlayback"/>
         </LinearLayout>
-        <Button
+        <ImageButton
                 android:layout_width="40dp"
-                android:layout_height="wrap_content" android:id="@+id/playPauseButton"
-                android:text="-" android:onClick="playbackBarInteraction" android:textSize="12sp"
+                android:layout_height="match_parent" android:id="@+id/playPauseButton"
+                android:onClick="playbackBarInteraction"
+                android:textSize="14sp"
                 style="@style/Widget.AppCompat.Button.Borderless" android:gravity="center_horizontal|center_vertical"
                 android:foregroundGravity="center_vertical|center_horizontal"
-                android:layout_gravity="center_horizontal|center_vertical"/>
+                android:layout_gravity="center_horizontal|center_vertical" android:src="@drawable/icon_play_mini"
+                android:scaleType="centerCrop"/>
     </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/tabBar"

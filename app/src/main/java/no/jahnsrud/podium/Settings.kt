@@ -32,7 +32,16 @@ object Settings {
 
     fun getSeekForward() : Int {
         return prefs!!.getInt("seekForward", DEFAULT_SEEK_VALUE)
+    }
 
+    fun setFirstLaunchFinished() {
+        val editor = prefs!!.edit()
+        editor.putBoolean("firstLaunch", false)
+        editor.apply()
+    }
+
+    fun isFirstLaunch() : Boolean {
+        return prefs!!.getBoolean("firstLaunch", true)
     }
 
 }
