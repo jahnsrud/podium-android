@@ -114,18 +114,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a731a21f-b3ca-4e4c-8ca0-f26510e53b34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/SwipeToDeleteCallback.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_delete.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/adapters/PodcastAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/adapters/PodcastAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodiumRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodiumRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/models/Podcast.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/models/Podcast.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastFragment.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,33 +140,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/PodcastManager.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="22" selection-start-line="19" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastListFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+            <state relative-caret-position="600">
+              <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/icon_delete.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/adapters/PodcastAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="293">
-              <caret line="73" column="16" lean-forward="true" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+              <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -182,8 +160,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastDao.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="135">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastFragment.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="117" column="24" lean-forward="true" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/activities/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="146" column="41" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LibraryFragment.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -207,28 +212,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastRoomDatabase.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodiumRepository.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+            <state relative-caret-position="165">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodiumRepository.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastViewModel.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+            <state relative-caret-position="105">
+              <caret line="15" column="34" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -247,10 +243,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>houston, this is</find>
-      <find>room</find>
-      <find>Podcast(</find>
-      <find>= 2</find>
       <find>)</find>
       <find>Glide.w</find>
       <find>glide.wi</find>
@@ -276,7 +268,11 @@
       <find>getMovementFlags</find>
       <find>NOT_ADDED</find>
       <find>episodeadapter</find>
+      <find>getallpodcasts</find>
+      <find>getAllPodcasts</find>
+      <find>podcastdao</find>
       <find>insert(</find>
+      <find>populate</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/src/main/res/anim</dir>
@@ -315,7 +311,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/SettingsFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastRoomDatabase.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/activities/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/AudioPlayer.kt" />
@@ -325,7 +320,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/EpisodeViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/EpisodeListFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_podcast.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/adapters/EpisodeAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_podcast.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_register.xml" />
@@ -336,9 +330,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/adapters/PodcastAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastListFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/SwipeToDeleteCallback.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastDao.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/parsers/FeaturedContentParser.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/models/Podcast.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastDao.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastViewModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastFragment.kt" />
       </list>
     </option>
   </component>
@@ -374,6 +370,13 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="podium" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Podium-Android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="podium" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="activities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Podium-Android" type="1abcf292:AndroidViewProjectNode" />
@@ -603,13 +606,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555504287620</updated>
-    </task>
-    <task id="LOCAL-00019" summary="AND THERE WE GO! A fully functioning tab bar navigation system 🥳🥳🥳">
-      <created>1555860548722</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1555860548722</updated>
     </task>
     <task id="LOCAL-00020" summary="Bug fixes and cleanup">
       <created>1555861013886</created>
@@ -947,7 +943,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556440419164</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="You can now delete episodes. You're welcome.">
+      <created>1556477375906</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1556477375906</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -955,7 +958,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19767442" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19767442" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -963,14 +966,14 @@
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" weight="0.32967034" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49677002" visible="true" weight="0.33178654" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49677002" weight="0.33178654" />
       <window_info anchor="bottom" id="Logcat" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32946634" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50323" side_tool="true" weight="0.33178654" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49547803" weight="0.30278423" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" sideWeight="0.49547803" visible="true" weight="0.30162412" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" sideWeight="0.499354" weight="0.32946634" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.329849" />
@@ -987,7 +990,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Huge work on login/registration" />
     <MESSAGE value="More great improvements to the login/register process " />
     <MESSAGE value="Improved Settings UX" />
     <MESSAGE value="The playback UI is now modularized and looks much better" />
@@ -1012,7 +1014,8 @@
     <MESSAGE value="Nå sendes valgt podcast til Playback ‍" />
     <MESSAGE value="A much improved design on the Library section " />
     <MESSAGE value="Same button setup on Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Same button setup on Login" />
+    <MESSAGE value="You can now delete episodes. You're welcome." />
+    <option name="LAST_COMMIT_MESSAGE" value="You can now delete episodes. You're welcome." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/playback_metadata_background_rounded.xml">
@@ -1047,13 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LibraryFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -1119,13 +1115,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/activities/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1048">
-          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/media/MediaPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1195,16 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-          <folding>
-            <element signature="e#38#439#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1299,13 +1278,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/icon_delete.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastListFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="65" column="24" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/SwipeToDeleteCallback.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1313,20 +1285,6 @@
           <folding>
             <element signature="e#28#418#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodiumRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastDao.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1347,14 +1305,56 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/adapters/PodcastAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
-          <caret line="73" column="16" lean-forward="true" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastDao.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodiumRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/database/PodcastViewModel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        <state relative-caret-position="105">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/LibraryFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastListFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/activities/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="146" column="41" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/no/jahnsrud/podium/fragments/PodcastFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="117" column="24" lean-forward="true" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
         </state>
       </provider>
     </entry>

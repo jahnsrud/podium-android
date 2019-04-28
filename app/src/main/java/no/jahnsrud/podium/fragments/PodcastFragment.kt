@@ -9,18 +9,19 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_podcast.*
+import kotlinx.coroutines.CoroutineScope
 import no.jahnsrud.podium.models.Podcast
 import no.jahnsrud.podium.R
 import no.jahnsrud.podium.adapters.EpisodeAdapter
-import no.jahnsrud.podium.database.EpisodeViewModel
-import no.jahnsrud.podium.database.PodcastDao
-import no.jahnsrud.podium.database.PodcastViewModel
+import no.jahnsrud.podium.database.*
+import kotlin.coroutines.CoroutineContext
 
 
 class PodcastFragment : androidx.fragment.app.Fragment() {
 
     var podcast: Podcast? = null
     private lateinit var episodeViewModel: EpisodeViewModel
+    private lateinit var podcastViewModel: PodcastViewModel
 
 
     override fun onCreateView(
@@ -71,12 +72,7 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
 
     fun actionButtonPressed() {
 
-        // TODO: Fix
-        if (isSubscribed()) {
-
-        } else {
-        }
-
+        // TODO: FIX!
         subscribe()
 
 
@@ -100,29 +96,34 @@ class PodcastFragment : androidx.fragment.app.Fragment() {
     }
 
 
-
-
     fun populateData() {
         titleTextView.setText(podcast?.title)
         Glide.with(coverImageView).load(podcast?.coverImageUrl)
             .placeholder(R.drawable.placeholder_cover)
             .into(coverImageView)
 
-        if (isSubscribed()) {
-            actionButton.text = "Play"
-        } else {
-            actionButton.text = "+ Subscribe"
-
-        }
+        checkSubscription()
 
 
     }
 
-    fun isSubscribed() : Boolean {
+    fun checkSubscription(){
 
-        // TODO: Implement
+        podcastViewModel = ViewModelProviders.of(this).get(PodcastViewModel::class.java)
+        podcastViewModel.allPodcasts.observe(this, Observer { podcasts ->
 
-        return true;
+            podcasts.forEach({
+                if (it.feedUrl.equals(this.podcast!!.feedUrl)) {
+                    actionButton.text = "▶ Play"
+                } else {
+                    actionButton.text = "+ Subscribe"
+                }
+            })
+
+
+
+        })
+
     }
 
 }
