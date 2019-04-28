@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 object Settings {
     val PREFS_FILENAME = "no.jahnsrud.podium.prefs"
     var prefs: SharedPreferences? = null
+    val DEFAULT_SEEK_VALUE = 15
 
     fun init(context: Context) {
         prefs = context.getSharedPreferences(PREFS_FILENAME, 0)
@@ -22,6 +23,16 @@ object Settings {
         val editor = prefs!!.edit()
         editor.putInt("seekBackward", interval)
         editor.apply()
+    }
+
+    fun getSeekBackward() : Int {
+        return prefs!!.getInt("seekBackward", DEFAULT_SEEK_VALUE)
+
+    }
+
+    fun getSeekForward() : Int {
+        return prefs!!.getInt("seekForward", DEFAULT_SEEK_VALUE)
+
     }
 
 }

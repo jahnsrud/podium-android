@@ -6,13 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_playback.*
 import kotlinx.android.synthetic.main.fragment_settings.*
+import no.jahnsrud.podium.AudioPlayer
 import no.jahnsrud.podium.activities.LoginActivity
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.Settings
 import no.jahnsrud.podium.logic.UserHelper
 
-class SettingsFragment : androidx.fragment.app.Fragment() {
+class SettingsFragment : androidx.fragment.app.Fragment(), SeekBar.OnSeekBarChangeListener  {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,20 +28,48 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
     override fun onStart() {
         super.onStart()
 
-        settings_openLoginButton.setOnClickListener({
-           openLogin()
-        })
+        configureOnClickListeners()
+        updateStatus()
+
+    }
+
+    fun configureOnClickListeners() {
+        settings_openLoginButton.setOnClickListener({openLogin()})
 
         settingsButton1.setOnClickListener({displayNotAvailable()})
         settingsButton2.setOnClickListener({displayNotAvailable()})
         settingsButton3.setOnClickListener({displayNotAvailable()})
 
-        updateStatus()
+        // backwardSeekBar.setOnSeekBarChangeListener(this)
+        // forwardSeekBar.setOnSeekBarChangeListener(this)
 
+        // backwardSeekBar.setProgress(Settings.getSeekBackward())
+        // forwardSeekBar.setProgress(Settings.getSeekForward())
     }
 
     fun displayNotAvailable() {
         view?.let { Snackbar.make(it, "Coming soon 🎉", Snackbar.LENGTH_SHORT).show() }
+
+    }
+
+    // SeekBar implementation
+    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+    }
+
+    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+
+        if (seekBar == this.backwardSeekBar) {
+            Settings.setSeekBackwardInterval(progress)
+        } else if (seekBar == this.forwardSeekBar) {
+            Settings.setSeekForwardInterval(progress)
+
+        }
+
+
+    }
+
+    override fun onStartTrackingTouch(seekBar: SeekBar?) {
 
     }
 

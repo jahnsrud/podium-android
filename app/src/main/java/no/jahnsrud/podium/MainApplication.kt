@@ -6,6 +6,7 @@ class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         AudioPlayer
+        Settings
 
     }
 }
