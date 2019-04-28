@@ -54,7 +54,7 @@
                     android:text="@android:string/cancel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/login_cancelButton"
-                    android:background="@drawable/rounded_background"/>
+                    android:background="@drawable/rounded_background" android:layout_marginBottom="10dp"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
