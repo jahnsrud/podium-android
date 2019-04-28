@@ -1,5 +1,6 @@
 package no.jahnsrud.podium.adapters
 
+import android.app.Application
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.list_item_podcast.view.*
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.database.PodcastViewModel
 import no.jahnsrud.podium.fragments.PodcastFragment
 
 
@@ -65,6 +67,14 @@ class PodcastAdapter internal constructor(
 
     }
 
+    fun removeAt(position: Int) {
+
+        val podcast = podcasts.get(position)
+        val model = PodcastViewModel(application = Application())
+        model.delete(podcast)
+
+        notifyItemRemoved(position)
+    }
 
     internal fun setPodcasts(podcasts: List<Podcast>) {
         this.podcasts = podcasts

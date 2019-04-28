@@ -6,10 +6,14 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.SimpleAdapter
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_podcast_list.*
 import no.jahnsrud.podium.adapters.PodcastAdapter
 import no.jahnsrud.podium.database.PodcastViewModel
 import no.jahnsrud.podium.R
+import no.jahnsrud.podium.SwipeToDeleteCallback
 
 class PodcastListFragment : androidx.fragment.app.Fragment() {
 
@@ -44,6 +48,16 @@ class PodcastListFragment : androidx.fragment.app.Fragment() {
             podcasts?.let { adapter.setPodcasts(it) }
         })
 
+        val swipeHandler = object : SwipeToDeleteCallback(context) {
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val adapter = list_recycler_view.adapter as PodcastAdapter
+                adapter.removeAt(viewHolder.adapterPosition)
+            }
+
+        }
+
+        val itemTouchHelper = ItemTouchHelper(swipeHandler)
+        itemTouchHelper.attachToRecyclerView(list_recycler_view)
 
 
     }

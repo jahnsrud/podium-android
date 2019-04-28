@@ -1,10 +1,7 @@
 package no.jahnsrud.podium.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import no.jahnsrud.podium.models.Podcast
 
 @Dao
@@ -14,7 +11,7 @@ interface PodcastDao {
     @Query("SELECT * FROM podcasts ORDER BY title ASC")
     fun getAllPodcasts(): LiveData<List<Podcast>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(podcast: Podcast)
 
     @Delete

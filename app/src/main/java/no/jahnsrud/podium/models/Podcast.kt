@@ -7,9 +7,9 @@ import java.io.Serializable
 
 @Entity(tableName = "podcasts")
 open class Podcast (
-    @PrimaryKey var id:String,
+    @ColumnInfo(name = "id") var id:String,
     @ColumnInfo(name = "title") var title:String,
-    @ColumnInfo(name = "feedUrl") var feedUrl:String,
+    @PrimaryKey var feedUrl:String,
     @ColumnInfo(name = "coverImageUrl") var coverImageUrl:String,
     @ColumnInfo(name = "description") var description:String,
     @ColumnInfo(name = "publisher") var publisher:String

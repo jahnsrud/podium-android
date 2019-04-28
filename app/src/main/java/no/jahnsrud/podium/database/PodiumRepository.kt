@@ -29,6 +29,11 @@ class PodiumRepository {
     }
 
     @WorkerThread
+    suspend fun delete(podcast: Podcast) {
+        podcastDao.delete(podcast)
+    }
+
+    @WorkerThread
     suspend fun insert(episode: Episode) {
         // episodeDao
     }
