@@ -41,7 +41,7 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
         if (UserHelper().isLoggedIn()) {
             settings_openLoginButton.text = "${UserHelper().getLoggedInEmail()}"
         } else {
-            settings_openLoginButton.text = "Login"
+            settings_openLoginButton.text = "Login to get started"
         }
 
     }
