@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_settings.*
 import no.jahnsrud.podium.activities.LoginActivity
 import no.jahnsrud.podium.R
@@ -27,7 +28,16 @@ class SettingsFragment : androidx.fragment.app.Fragment() {
            openLogin()
         })
 
+        settingsButton1.setOnClickListener({displayNotAvailable()})
+        settingsButton2.setOnClickListener({displayNotAvailable()})
+        settingsButton3.setOnClickListener({displayNotAvailable()})
+
         updateStatus()
+
+    }
+
+    fun displayNotAvailable() {
+        view?.let { Snackbar.make(it, "Coming soon 🎉", Snackbar.LENGTH_SHORT).show() }
 
     }
 

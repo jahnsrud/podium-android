@@ -15,6 +15,7 @@ import no.jahnsrud.podium.R
 import no.jahnsrud.podium.models.Episode
 import no.jahnsrud.podium.models.Podcast
 import android.os.Handler
+import android.view.GestureDetector
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 

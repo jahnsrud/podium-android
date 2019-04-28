@@ -1,14 +1,17 @@
 package no.jahnsrud.podium.fragments
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.fragment_register.emailField
 import kotlinx.android.synthetic.main.fragment_register.passwordField
@@ -75,9 +78,13 @@ class RegisterFragment : Fragment() {
 
 
         }
+
+        endEditing()
     }
 
     fun openLogin() {
+
+        endEditing()
 
         val fragment: Fragment = LoginFragment()
 
@@ -88,6 +95,17 @@ class RegisterFragment : Fragment() {
             transaction.commit()
         }
     }
+
+    fun endEditing() {
+        emailField.hideKeyboard()
+        passwordField.hideKeyboard()
+    }
+
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+
 
     fun closeLogin() {
         this.activity?.finish()
