@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragments.LoginFragment"
+>
+    <ImageView
+            android:src="@drawable/background_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/imageView2" android:scaleType="centerCrop"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:padding="32dp"
+            android:background="@drawable/rounded_background_colored" android:gravity="center"
+            android:foregroundGravity="center_vertical|center"
+            android:layout_gravity="center_horizontal|center_vertical" android:layout_margin="30dp">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="LOGIN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView3" android:textSize="22sp"
+                    android:textStyle="bold" android:textColor="#000000" android:layout_marginBottom="8dp"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:ems="10"
+                    android:id="@+id/emailField" android:hint="Email"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:id="@+id/passwordField" android:hint="Password" android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:text="Login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/login_loginButton"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:background="@drawable/playback_metadata_background_rounded" android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp"/>
+            <Button
+                    android:text="New? Register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/login_registerButton"
+                    android:layout_marginBottom="8dp" android:background="@drawable/rounded_background"/>
+            <Button
+                    android:text="@android:string/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/login_cancelButton"
+                    android:background="@drawable/rounded_background" android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

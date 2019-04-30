@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "113311396082",
+    "firebase_url": "https://podium-20055.firebaseio.com",
+    "project_id": "podium-20055",
+    "storage_bucket": "podium-20055.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113311396082:android:3b53e910ec5b17a0",
+        "android_client_info": {
+          "package_name": "no.jahnsrud.podium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113311396082-06t6hrhpe2ujsnc9d6d02gh32rbcno84.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "no.jahnsrud.podium",
+            "certificate_hash": "18c9a8371629f34fff2ddc5fc70711b6ea9b4aab"
+          }
+        },
+        {
+          "client_id": "113311396082-u7jli7n3l5f96seeh8f8kbfttjshov0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAanVBTfDdFLQtmKFdTtuy8JZhHF2Igi4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113311396082-u7jli7n3l5f96seeh8f8kbfttjshov0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="100dp" android:orientation="vertical" android:layout_marginBottom="8dp"
+              android:layout_marginTop="8dp">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+            android:gravity="center_horizontal|center_vertical">
+        <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp" tools:srcCompat="@drawable/placeholder_cover"
+                android:id="@+id/imageView"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/list_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="Podcast"
+                    android:textStyle="bold" android:textSize="17sp" android:textColor="@color/colorBlack"
+                    android:layout_marginTop="8dp" android:textAlignment="viewStart" android:layout_marginLeft="16dp"/>
+            <TextView
+                    android:id="@+id/list_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:text="Description" android:textAlignment="viewStart" android:layout_marginLeft="16dp"
+                    android:letterSpacing="0.1"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
